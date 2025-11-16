@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "mark michael"
+  navbar:
+    right:
+      - about.qmd
+      - text: "{{< iconify simple-icons bluesky >}}"
+        href: https://bsky.app/profile/markmichael.dev
+      - icon: linkedin
+        href: https://linkedin.com/in/markmichael2
+      - icon: github
+        href: https://github.com/markmichael
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+
+
+

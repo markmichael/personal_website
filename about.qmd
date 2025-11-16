@@ -1,0 +1,18 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - text: "{{< iconify simple-icons bluesky >}} Bluesky"
+      href: https://bsky.app/profile/markmichael.dev
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/markmichael2
+    - icon: github
+      text: Github
+      href: https://github.com/markmichael
+
+---
+
+About this blog
