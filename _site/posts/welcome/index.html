@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tristan O’Malley">
-<meta name="dcterms.date" content="2025-10-25">
+<meta name="author" content="Mark Michael">
+<meta name="dcterms.date" content="2025-11-15">
 
-<title>Welcome To My Blog – mark michael</title>
+<title>From the Furrows - building a grownup backend – mark michael</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,14 +34,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cca5a5424a93048cc934d55e7e879e63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0942b56df56698cc95a3f5da190baf7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +71,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XV04WJ9C9C"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -95,13 +106,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/markmichael.dev"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="simple-icons:bluesky" aria-label="Icon bluesky from simple-icons Iconify.design set." title="Icon bluesky from simple-icons Iconify.design set."></iconify-icon></span></a>
+  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/markmichael2"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://github.com/markmichael"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -116,9 +131,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
+      <h1 class="title">From the Furrows - building a grownup backend</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">development</div>
+                <div class="quarto-category">harvvest</div>
               </div>
                   </div>
   </div>
@@ -129,14 +145,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Tristan O’Malley </p>
+               <p>Mark Michael </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 25, 2025</p>
+        <p class="date">November 15, 2025</p>
       </div>
     </div>
     
@@ -155,11 +171,21 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
+<p>Over a year ago, I committed my first lines of code for our new app. At that point I had used R for advanced data analysis work and dabbled into building my first applications. Armed with that and some product knowledge building health apps. Peter and I started on our Harvvest journey. We started assembling a list of brands with affiliate links and I created my first endpoint using plumber to show that list to the client.</p>
+<p>Now our app has become more complex. Users can preview brand deals to promote, generate their unique links, receive brand kits for the deals they want to promote, and track and withdraw their earnings. We brought on a more experienced backend developer and have started building the next version of our app, informed by the challenges from the previous year. One of the particularly interesting things about this type of growth is that some of the decisions that we are now considering suboptimal were actually pretty good for when we were getting started. And some of them were just bad. I’m going to go through some of those considerations here.</p>
+<section id="writing-a-backend-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="writing-a-backend-in-r">Writing a backend in R</h3>
+<p>There is a lot of commentary for and against R in production environments. <a href="https://www.r-bloggers.com/2023/06/lessons-learned-from-running-r-in-production/">This article</a> provides an excellent technical discussion on the topic. For an application like Harvvest, languages more tailored towards performance and concurrency rather than statistics would have been better. That said, it was the language I knew best. And because I had that knowledge, I could focus more on the programming methodology rather than banging my head against tons of syntax errors and blindly copying code for ChatGPT or StackOverflow. In fact, as we are transitioning to Python and FastAPI, we’re finding that probably around 85% of the endpoints and general functionality will be conserved. Also, I was able to build faster. When we planned for a new feature, I would typically have the backend and documentation completed within a day. Overall, I was happy with this choice in the beginning, and I think we still could have gotten more mileage from our R backend.</p>
+<p>I did do a couple of important changes along the way to account for some of R’s shortcomings. The first was that for some functionality, like sending a welcome email, it made sense to do it with a database function instead of via the backend. Accounts were created through direct interface with Supabase, so the database would know before the backend knew that an account had been created. Another change was that I moved functionality related to followers to a separate service written in Elixir. Our app would primarily be used by influencers. Their followers, who probably outnumber influencers by at least an order of magnitude, interact with the links that the influencers generate and post. With that change, our linking service was able to support our highest traffic days.</p>
+</section>
+<section id="databases" class="level3">
+<h3 class="anchored" data-anchor-id="databases">Databases</h3>
+<p>My background with databases until this point had been almost entirely querying data with SQL and working with it in R. I had never created tables or stored data in a database before. We had made the decision to use Google Cloud because</p>
 <p><img src="thumbnail.jpg" class="img-fluid"></p>
 <p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -213,13 +239,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

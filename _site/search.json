@@ -1,30 +1,30 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "From the Furrows - building a grownup backend",
     "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "mark michael",
-    "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 28, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 25, 2025\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Over a year ago, I committed my first lines of code for our new app. At that point I had used R for advanced data analysis work and dabbled into building my first applications. Armed with that and some product knowledge building health apps. Peter and I started on our Harvvest journey. We started assembling a list of brands with affiliate links and I created my first endpoint using plumber to show that list to the client.\nNow our app has become more complex. Users can preview brand deals to promote, generate their unique links, receive brand kits for the deals they want to promote, and track and withdraw their earnings. We brought on a more experienced backend developer and have started building the next version of our app, informed by the challenges from the previous year. One of the particularly interesting things about this type of growth is that some of the decisions that we are now considering suboptimal were actually pretty good for when we were getting started. And some of them were just bad. I’m going to go through some of those considerations here.\n\nWriting a backend in R\nThere is a lot of commentary for and against R in production environments. This article provides an excellent technical discussion on the topic. For an application like Harvvest, languages more tailored towards performance and concurrency rather than statistics would have been better. That said, it was the language I knew best. And because I had that knowledge, I could focus more on the programming methodology rather than banging my head against tons of syntax errors and blindly copying code for ChatGPT or StackOverflow. In fact, as we are transitioning to Python and FastAPI, we’re finding that probably around 85% of the endpoints and general functionality will be conserved. Also, I was able to build faster. When we planned for a new feature, I would typically have the backend and documentation completed within a day. Overall, I was happy with this choice in the beginning, and I think we still could have gotten more mileage from our R backend.\nI did do a couple of important changes along the way to account for some of R’s shortcomings. The first was that for some functionality, like sending a welcome email, it made sense to do it with a database function instead of via the backend. Accounts were created through direct interface with Supabase, so the database would know before the backend knew that an account had been created. Another change was that I moved functionality related to followers to a separate service written in Elixir. Our app would primarily be used by influencers. Their followers, who probably outnumber influencers by at least an order of magnitude, interact with the links that the influencers generate and post. With that change, our linking service was able to support our highest traffic days.\n\n\nDatabases\nMy background with databases until this point had been almost entirely querying data with SQL and working with it in R. I had never created tables or stored data in a database before. We had made the decision to use Google Cloud because\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "Hi, I’m Mark. I’m a Seattle-baed product manager with a background in medicine. I have opinions about healthcare, technology, cycling, and other things.   Most recently, I’ve been building Harvvest, a platform that helps influencers monetize their content by connecting them with brands for them to promote.  \nMD - Baylor College of Medicine  BE Biomedical Engineering - Vanderbilt University"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "mark michael",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "From the Furrows - building a grownup backend\n\n\n\ndevelopment\n\nharvvest\n\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\nMark Michael\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 28, 2025\n\n\nHarlow Malloc\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
   }
 ]

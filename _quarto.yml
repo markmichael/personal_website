@@ -1,8 +1,9 @@
 project:
   type: website
 
-website:
+website:  
   title: "mark michael"
+  google-analytics: "G-XV04WJ9C9C"
   navbar:
     right:
       - about.qmd
