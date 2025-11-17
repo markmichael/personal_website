@@ -1,0 +1,36 @@
+---
+title: "From the Furrows - building a grownup backend"
+date: "2025-11-15"
+categories: [development, harvvest]
+---
+
+
+Over a year ago, I committed my first lines of code for our new app. At that point I had used R for advanced data analysis work and dabbled into building my first applications. Armed with that and some product knowledge building health apps. Peter and I started on our Harvvest journey. We started assembling a list of brands with affiliate links and I created my first endpoint using plumber to show that list to the client. 
+
+Now our app has become more complex. Users can preview brand deals to promote, generate their unique links, receive brand kits for the deals they want to promote, and track and withdraw their earnings. We brought on a more experienced backend developer and have started building the next version of our app, informed by the challenges from the previous year. One of the particularly interesting things about this type of growth is that some of the decisions that we are now considering suboptimal were actually pretty good for when we were getting started. And some of them were just bad. I'm going to go through some of those considerations here. <br> 
+
+![Peter and I over a year into Harvvest with our first company swag](founder_picture.jpg){width=400px}
+
+### Writing a backend in R 
+
+There is a lot of commentary for and against R in production environments. [This article](https://www.r-bloggers.com/2023/06/lessons-learned-from-running-r-in-production/) provides an excellent technical discussion on the topic. For an application like Harvvest, languages more tailored towards performance and concurrency rather than statistics would have been better. That said, it was the language I knew best. And because I had that knowledge, I could focus more on the programming methodology rather than banging my head against tons of syntax errors and blindly copying code for ChatGPT or StackOverflow. In fact, as we are transitioning to Python and FastAPI, we're finding that probably around 85% of the endpoints and general functionality will be conserved. Also, I was able to build faster. When we planned for a new feature, I would typically have the backend and documentation completed within a day. Overall, I was happy with this choice in the beginning, and I think we still could have gotten more mileage from our R backend.
+
+I did do a couple of important changes along the way to account for some of R's shortcomings. The first was that for some functionality, like sending a welcome email, it made sense to do it with a database function instead of via the backend. Accounts were created through direct interface with Supabase, so the database would know before the backend knew that an account had been created. Another change was that I moved functionality related to followers to a separate service written in Elixir. Our app would primarily be used by influencers. Their followers, who probably outnumber influencers by at least an order of magnitude, interact with the links that the influencers generate and post. With that change, our linking service was able to support our highest traffic days. 
+
+
+### Databases
+
+My background with databases until this point had been almost entirely querying data with SQL and working with it in R. I had never created tables or stored data in a database before. We made the decision to use Google Cloud because I had burned through my AWS free trials on a previous project. The natural option then became Firebase's NoSQL database. Not only was I not familiar with interfacing with these types of databases, but I also could not find a mature R package to abstract the nuances away. I got to the point where I was using [httr2](https://httr2.r-lib.org/) to populate brand deals into the Firebase before deciding that this process was not sustainable and I need to switch to something I was more familiar with--Postgres.
+
+I ended up choosing [Supabase](https://supabase.com/) without really understanding all the implications of that decision. Fortunately, it had benefits that I did not realize as I was making the decision. User creation and authentication are automatically taken care of, social logins were much easier to implement, and security was largely handled for me. Additionally, their free tier is plenty to prove out an idea.
+
+An important lesson I learned is that using R to interface with a database for data analysis and data science vs building a consumer application. Querying data using [dbplyr](https://dbplyr.tidyverse.org/) is fantastic, but R does a lot of magic behind the scenes in the form of type changing. Enums and uuids both get changed to strings. And you don't need to do anything with foreign keys to link your tables together--you just know which columns you want to join by and join them. This resulted in the schema visualizer showing each table in a vertical line with no relationships between them. It also was incorrectly forgiving when saving values that had inconsistent capitalization or other subtle differences.
+
+### CI/CD
+
+For some of my earlier projects, my deployments involved building a docker image, pushing it to Docker Hub, then SSHing into my ec2 instance on AWS, and then pulling and running the container. For Harvvest, we switched to GCP and I used Cloud Run and Cloud Build. Both of these made it very easy for me to build and deploy just by merging a pull request on Github. I had encountered a few cases where my local testing using docker compose would behave differently than the cloud deployment. Sometimes it was related to resources available to the container. Several times, I forgot to add new environment variables. One of the most frustrating was that Cloud Run had a harder time executing a complex initial command, such as importing my libraries and starting Plumber. For that I created an init.R file with all the setup commands an then used a simple `Rscript init.R` in my Dockerfile.
+
+With my setup, building and deploying from Github was the only thing I knew how to do. A downside to this was that I was building separate containers for dev and production. For our new pipeline we are going to switch to only building the dev app, and then re-deploying that image in production when testing is complete. Additionally, we have done very little with testing via Github actions and are planning to incorporate more of that to help us feel more confident in our releases.  <br>
+
+![](harvvest_logo.png){width=300px}
+
