@@ -1,0 +1,86 @@
+
+---
+title: "TidyTuesday 2025-11-18 - Sherlock Holmes"
+date: "2025-11-22"
+categories: ["data science", "tidytuesday", "rstats"]
+---
+
+## The Complete Works of Sherlock Holmes
+
+### Introduction
+
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+```
+
+```{r setup2, include=FALSE}
+data <- tidytuesdayR::tt_load("2025-11-18")[[1]]
+
+```
+
+
+Analysing literature with data science and numerical methods is a fun journey. A few years ago I read [Nabokov's favorite word is mauve](https://www.goodreads.com/book/show/30753786-nabokov-s-favorite-word-is-mauve) by Ben Blatt. The methods for quantifying literature are both interesting and compelling, and I'm interested in seeing if there are similar patterns here. Sidenote: that book was described to me as "the most NPR book ever," and I love that.
+
+My first step is to explore samples of the data to see if it's usable as is.
+
+```{r}
+
+books <- data |>
+  distinct(book) |>
+  mutate(publish_order = row_number())
+print(books)
+
+text_sample <- data[2000:2100,]
+
+print(text_sample)
+
+```
+
+The most remarkable thing from the sample is that each observation represents a literal line in the novel. The lines can be concatenated so that each observation is a paragraph. This will be particularly useful in understanding dialog because it is typical in literature to start a new paragraph each time a speaker changes. The NAs between lines mean we have a good boundary between paragraphs.
+
+Additionally, I cross-referenced the novel order with the [Canon of Sherlock Holmes](https://en.wikipedia.org/wiki/Canon_of_Sherlock_Holmes) in order to understand the order in which these works were published. I think it could be interesting to see if there are changes that occur between earlier works and later works.
+
+```{r}
+
+paragraphs <- data |>
+  mutate(paragraph = cumsum(is.na(text))) |>
+  filter(!is.na(text)) |>
+  group_by(book,paragraph) |>
+  summarize(text = paste(text, collapse = " "))
+
+paragraphs_sample <- paragraphs[2000:2010,]
+
+print(paragraphs_sample)
+
+```
+
+### Exclamation points 
+
+F. Scott Fitzgerald and Earnest Hemingway were known for their very resvered use of exclamation points. Fizgerald describes it as "Laughing at your own joke." We can use this data to determine how well Arthur Conan Doyle follows this rule.
+
+```{r}
+
+exclamation_points <- paragraphs |>
+  mutate(exclamation_points = str_count(text, "!"))
+
+exclamation_point_sample <- exclamation_points |>
+  filter(exclamation_points > 0) |>
+  slice_sample(n = 5)
+
+### showing some example lines as a sanity check to make sure our code is working
+
+print(exclamation_point_sample)
+
+exclamation_points_summary <- exclamation_points |>
+  group_by(book) |>
+  summarize(exclamation_points = sum(exclamation_points)) |>
+  left_join(books, by = "book") |>
+  arrange(desc(exclamation_points))
+
+### actually counting exclamation points
+
+print(exclamation_points_summary)
+```
