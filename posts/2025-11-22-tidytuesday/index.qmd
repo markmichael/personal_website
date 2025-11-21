@@ -70,6 +70,8 @@ paragraphs_sample |>
 
 ### Exclamation points 
 
+The analysis from Blatt that I'm interested in replicating is his exclamation point analysis.
+
 F. Scott Fitzgerald and Earnest Hemingway were known for their very resvered use of exclamation points. Fizgerald describes it as "Laughing at your own joke." We can use this data to determine how well Arthur Conan Doyle follows this rule.
 
 ```{r}
@@ -125,7 +127,6 @@ exclamation_points_summary |>
   filter(!(book %in% novels)) |>
   ggplot(aes(x = publish_order, y = exclamation_points)) +
   geom_point() +
-  geom_smooth(method = "lm") +
   labs(
     x = "Publish Order",
     y = "Exclamation Points",
@@ -144,55 +145,4 @@ exclamation_points_summary |>
 
 ```
 
-### Matrix Profile Analysis
-
-The [Matrix Profile](https://www.cs.ucr.edu/~eamonn/MatrixProfile.html) is a mathematical method used for finding motifs, discords, and other insights in time series data. Text can be transformed into time series data by converting each letter into a number and using the index for time.
-
-```{r}
-# Concatenate all text for each book
-book_text <- paragraphs |>
-  group_by(book) |>
-  summarize(text = paste(text, collapse = " "))
-
-# Function to convert text to a numerical sequence
-text_to_numeric <- function(text) {
-  # Convert to lowercase
-  text <- tolower(text)
-  # Split into characters
-  chars <- strsplit(text, "")[[1]]
-  # Convert characters to numbers
-  sapply(chars, function(char) {
-    utf8ToInt(char) 
-  })
-}
-
-# Apply the function to each book's text
-numerical_text <- book_text |>
-  mutate(numeric_representation = map(text, text_to_numeric))
-
-# Display a sample of the numerical representation
-numerical_text |>
-  mutate(numeric_sample = map_chr(numeric_representation, ~ paste(head(.x, 20), collapse = ", "))) |>
-  mutate(text_sample = map_chr(numeric_representation, ~intToUtf8(head(.x, 20)))) |>
-  select(book, text_sample, numeric_sample) |>
-  slice_sample(n = 5) |>
-  gt() |>
-  tab_header(title = "Numerical Representation of Book Text (First 20 Characters)") |>
-  cols_label(
-    book = "Book",
-    text_sample = "Text Sample",
-    numeric_sample = "Numerical Sequence"
-  )
-```
-
-Next, we can apply the matrix profile. The only parameter input required is the size of a subsequence to use in our search. I'm going to follow classic Twitter's paradigm and us a character length of 140.
-
-```{r}
-
-book1 <- numerical_text |>
-  filter(book == "The Sign of the Four") |>
-  pull(numeric_representation)
-
-mp <- tsmp::scrimp(book1, 140)
-
-```
+Sometimes there's not anything particularly exciting with a type of analysis; sometimes just seeing that he remains consistent throughout is career as an awesome insight in itself.
