@@ -7,7 +7,7 @@ categories: ["data science", "tidytuesday", "rstats"]
 
 ## The Complete Works of Sherlock Holmes
 
-TidyTuesday is weekly data visualization challenge. The details for this week can be found [here](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-11-18).
+TidyTuesday is a weekly data visualization challenge. The details for this week can be found [here](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-11-18).
 
 ### Introduction
 
@@ -27,6 +27,7 @@ data <- tidytuesdayR::tt_load("2025-11-18")[[1]]
 Analysing literature with data science and numerical methods is a fun journey. A few years ago I read [Nabokov's favorite word is mauve](https://www.goodreads.com/book/show/30753786-nabokov-s-favorite-word-is-mauve) by Ben Blatt. The methods for quantifying literature are both interesting and compelling, and I'm interested in seeing if there are similar patterns here. Sidenote: that book was described to me as "the most NPR book ever," and I love that.
 
 My first step is to explore samples of the data to see if it's usable as is.
+<br> <br>
 
 ```{r}
 
@@ -46,9 +47,11 @@ text_sample |>
 
 ```
 
+<br> <br>
 The most remarkable thing from the sample is that each observation represents a literal line in the novel. The lines can be concatenated so that each observation is a paragraph. This will be particularly useful in understanding dialog because it is typical in literature to start a new paragraph each time a speaker changes. The NAs between lines mean we have a good boundary between paragraphs.
 
 Additionally, I cross-referenced the novel order with the [Canon of Sherlock Holmes](https://en.wikipedia.org/wiki/Canon_of_Sherlock_Holmes) in order to understand the order in which these works were published. I think it could be interesting to see if there are changes that occur between earlier works and later works.
+<br> <br>
 
 ```{r}
 
@@ -68,11 +71,14 @@ paragraphs_sample |>
 
 ```
 
+<br> <br>
+
 ### Exclamation points 
 
 The analysis from Blatt that I'm interested in replicating is his exclamation point analysis.
 
 F. Scott Fitzgerald and Earnest Hemingway were known for their very resvered use of exclamation points. Fizgerald describes it as "Laughing at your own joke." We can use this data to determine how well Arthur Conan Doyle follows this rule.
+<br> <br>
 
 ```{r}
 
@@ -112,9 +118,11 @@ exclamation_points_summary |>
   fmt_number(columns = exclamation_points, decimals = 0)
 ```
 
+<br> <br>
 Noteably the 4 highest counts are full novels, while the rest are short stories. It makes sense that they are higher, but they will skew the rest of the analysis.
 
 In graphical form:
+<br> <br>
 
 ```{r}
 
@@ -134,7 +142,9 @@ exclamation_points_summary |>
   )
 ```
 
+<br> <br>
 Graphically, it does not look like Doyle's use of exclamation points changed over time. We can verify this mathematically.
+<br> <br>
 
 ```{r}
 
@@ -144,5 +154,7 @@ exclamation_points_summary |>
   summary()
 
 ```
+
+<br> <br>
 
 Sometimes there's not anything particularly exciting with a type of analysis; sometimes just seeing that he remains consistent throughout is career as an awesome insight in itself.

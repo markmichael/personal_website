@@ -202,11 +202,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 
 <section id="the-complete-works-of-sherlock-holmes" class="level2">
 <h2 class="anchored" data-anchor-id="the-complete-works-of-sherlock-holmes">The Complete Works of Sherlock Holmes</h2>
-<p>TidyTuesday is weekly data visualization challenge. The details for this week can be found <a href="https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-11-18">here</a>.</p>
+<p>TidyTuesday is a weekly data visualization challenge. The details for this week can be found <a href="https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-11-18">here</a>.</p>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>Analysing literature with data science and numerical methods is a fun journey. A few years ago I read <a href="https://www.goodreads.com/book/show/30753786-nabokov-s-favorite-word-is-mauve">Nabokov’s favorite word is mauve</a> by Ben Blatt. The methods for quantifying literature are both interesting and compelling, and I’m interested in seeing if there are similar patterns here. Sidenote: that book was described to me as “the most NPR book ever,” and I love that.</p>
-<p>My first step is to explore samples of the data to see if it’s usable as is.</p>
+<p>My first step is to explore samples of the data to see if it’s usable as is. <br> <br></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>books <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(book) <span class="sc">|&gt;</span></span>
@@ -222,23 +222,23 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="wmryjpmrdf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
-<style>#wmryjpmrdf table {
+<div id="rlsuzoziow" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#rlsuzoziow table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wmryjpmrdf thead, #wmryjpmrdf tbody, #wmryjpmrdf tfoot, #wmryjpmrdf tr, #wmryjpmrdf td, #wmryjpmrdf th {
+#rlsuzoziow thead, #rlsuzoziow tbody, #rlsuzoziow tfoot, #rlsuzoziow tr, #rlsuzoziow td, #rlsuzoziow th {
   border-style: none;
 }
 
-#wmryjpmrdf p {
+#rlsuzoziow p {
   margin: 0;
   padding: 0;
 }
 
-#wmryjpmrdf .gt_table {
+#rlsuzoziow .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -264,12 +264,12 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#wmryjpmrdf .gt_caption {
+#rlsuzoziow .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wmryjpmrdf .gt_title {
+#rlsuzoziow .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -281,7 +281,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#wmryjpmrdf .gt_subtitle {
+#rlsuzoziow .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -293,7 +293,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#wmryjpmrdf .gt_heading {
+#rlsuzoziow .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -305,13 +305,13 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#wmryjpmrdf .gt_bottom_border {
+#rlsuzoziow .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#wmryjpmrdf .gt_col_headings {
+#rlsuzoziow .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -326,7 +326,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#wmryjpmrdf .gt_col_heading {
+#rlsuzoziow .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -346,7 +346,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#wmryjpmrdf .gt_column_spanner_outer {
+#rlsuzoziow .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -358,15 +358,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#wmryjpmrdf .gt_column_spanner_outer:first-child {
+#rlsuzoziow .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wmryjpmrdf .gt_column_spanner_outer:last-child {
+#rlsuzoziow .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wmryjpmrdf .gt_column_spanner {
+#rlsuzoziow .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -378,11 +378,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#wmryjpmrdf .gt_spanner_row {
+#rlsuzoziow .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wmryjpmrdf .gt_group_heading {
+#rlsuzoziow .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -408,7 +408,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#wmryjpmrdf .gt_empty_group_heading {
+#rlsuzoziow .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -423,15 +423,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#wmryjpmrdf .gt_from_md > :first-child {
+#rlsuzoziow .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wmryjpmrdf .gt_from_md > :last-child {
+#rlsuzoziow .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wmryjpmrdf .gt_row {
+#rlsuzoziow .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -450,7 +450,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#wmryjpmrdf .gt_stub {
+#rlsuzoziow .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -463,7 +463,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#wmryjpmrdf .gt_stub_row_group {
+#rlsuzoziow .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -477,15 +477,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#wmryjpmrdf .gt_row_group_first td {
+#rlsuzoziow .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wmryjpmrdf .gt_row_group_first th {
+#rlsuzoziow .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wmryjpmrdf .gt_summary_row {
+#rlsuzoziow .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -495,16 +495,16 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#wmryjpmrdf .gt_first_summary_row {
+#rlsuzoziow .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#wmryjpmrdf .gt_first_summary_row.thick {
+#rlsuzoziow .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wmryjpmrdf .gt_last_summary_row {
+#rlsuzoziow .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -514,7 +514,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#wmryjpmrdf .gt_grand_summary_row {
+#rlsuzoziow .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -524,7 +524,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#wmryjpmrdf .gt_first_grand_summary_row {
+#rlsuzoziow .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -534,7 +534,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-color: #5F5F5F;
 }
 
-#wmryjpmrdf .gt_last_grand_summary_row_top {
+#rlsuzoziow .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -544,11 +544,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#wmryjpmrdf .gt_striped {
+#rlsuzoziow .gt_striped {
   background-color: #F4F4F4;
 }
 
-#wmryjpmrdf .gt_table_body {
+#rlsuzoziow .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -557,7 +557,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#wmryjpmrdf .gt_footnotes {
+#rlsuzoziow .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -571,7 +571,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#wmryjpmrdf .gt_footnote {
+#rlsuzoziow .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -580,7 +580,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#wmryjpmrdf .gt_sourcenotes {
+#rlsuzoziow .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -594,7 +594,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#wmryjpmrdf .gt_sourcenote {
+#rlsuzoziow .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -602,63 +602,63 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#wmryjpmrdf .gt_left {
+#rlsuzoziow .gt_left {
   text-align: left;
 }
 
-#wmryjpmrdf .gt_center {
+#rlsuzoziow .gt_center {
   text-align: center;
 }
 
-#wmryjpmrdf .gt_right {
+#rlsuzoziow .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wmryjpmrdf .gt_font_normal {
+#rlsuzoziow .gt_font_normal {
   font-weight: normal;
 }
 
-#wmryjpmrdf .gt_font_bold {
+#rlsuzoziow .gt_font_bold {
   font-weight: bold;
 }
 
-#wmryjpmrdf .gt_font_italic {
+#rlsuzoziow .gt_font_italic {
   font-style: italic;
 }
 
-#wmryjpmrdf .gt_super {
+#rlsuzoziow .gt_super {
   font-size: 65%;
 }
 
-#wmryjpmrdf .gt_footnote_marks {
+#rlsuzoziow .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wmryjpmrdf .gt_asterisk {
+#rlsuzoziow .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wmryjpmrdf .gt_indent_1 {
+#rlsuzoziow .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wmryjpmrdf .gt_indent_2 {
+#rlsuzoziow .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wmryjpmrdf .gt_indent_3 {
+#rlsuzoziow .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wmryjpmrdf .gt_indent_4 {
+#rlsuzoziow .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wmryjpmrdf .gt_indent_5 {
+#rlsuzoziow .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1186,8 +1186,8 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>The most remarkable thing from the sample is that each observation represents a literal line in the novel. The lines can be concatenated so that each observation is a paragraph. This will be particularly useful in understanding dialog because it is typical in literature to start a new paragraph each time a speaker changes. The NAs between lines mean we have a good boundary between paragraphs.</p>
-<p>Additionally, I cross-referenced the novel order with the <a href="https://en.wikipedia.org/wiki/Canon_of_Sherlock_Holmes">Canon of Sherlock Holmes</a> in order to understand the order in which these works were published. I think it could be interesting to see if there are changes that occur between earlier works and later works.</p>
+<p><br> <br> The most remarkable thing from the sample is that each observation represents a literal line in the novel. The lines can be concatenated so that each observation is a paragraph. This will be particularly useful in understanding dialog because it is typical in literature to start a new paragraph each time a speaker changes. The NAs between lines mean we have a good boundary between paragraphs.</p>
+<p>Additionally, I cross-referenced the novel order with the <a href="https://en.wikipedia.org/wiki/Canon_of_Sherlock_Holmes">Canon of Sherlock Holmes</a> in order to understand the order in which these works were published. I think it could be interesting to see if there are changes that occur between earlier works and later works. <br> <br></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>paragraphs <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">paragraph =</span> <span class="fu">cumsum</span>(<span class="fu">is.na</span>(text))) <span class="sc">|&gt;</span></span>
@@ -1206,23 +1206,23 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="lihkfwcxdq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
-<style>#lihkfwcxdq table {
+<div id="zbtxejtivp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#zbtxejtivp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lihkfwcxdq thead, #lihkfwcxdq tbody, #lihkfwcxdq tfoot, #lihkfwcxdq tr, #lihkfwcxdq td, #lihkfwcxdq th {
+#zbtxejtivp thead, #zbtxejtivp tbody, #zbtxejtivp tfoot, #zbtxejtivp tr, #zbtxejtivp td, #zbtxejtivp th {
   border-style: none;
 }
 
-#lihkfwcxdq p {
+#zbtxejtivp p {
   margin: 0;
   padding: 0;
 }
 
-#lihkfwcxdq .gt_table {
+#zbtxejtivp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1248,12 +1248,12 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#lihkfwcxdq .gt_caption {
+#zbtxejtivp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lihkfwcxdq .gt_title {
+#zbtxejtivp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1265,7 +1265,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#lihkfwcxdq .gt_subtitle {
+#zbtxejtivp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1277,7 +1277,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#lihkfwcxdq .gt_heading {
+#zbtxejtivp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1289,13 +1289,13 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#lihkfwcxdq .gt_bottom_border {
+#zbtxejtivp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#lihkfwcxdq .gt_col_headings {
+#zbtxejtivp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1310,7 +1310,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#lihkfwcxdq .gt_col_heading {
+#zbtxejtivp .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1330,7 +1330,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#lihkfwcxdq .gt_column_spanner_outer {
+#zbtxejtivp .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1342,15 +1342,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#lihkfwcxdq .gt_column_spanner_outer:first-child {
+#zbtxejtivp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lihkfwcxdq .gt_column_spanner_outer:last-child {
+#zbtxejtivp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lihkfwcxdq .gt_column_spanner {
+#zbtxejtivp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1362,11 +1362,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#lihkfwcxdq .gt_spanner_row {
+#zbtxejtivp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lihkfwcxdq .gt_group_heading {
+#zbtxejtivp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1392,7 +1392,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#lihkfwcxdq .gt_empty_group_heading {
+#zbtxejtivp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1407,15 +1407,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#lihkfwcxdq .gt_from_md > :first-child {
+#zbtxejtivp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lihkfwcxdq .gt_from_md > :last-child {
+#zbtxejtivp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lihkfwcxdq .gt_row {
+#zbtxejtivp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1434,7 +1434,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#lihkfwcxdq .gt_stub {
+#zbtxejtivp .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -1447,7 +1447,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#lihkfwcxdq .gt_stub_row_group {
+#zbtxejtivp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1461,15 +1461,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#lihkfwcxdq .gt_row_group_first td {
+#zbtxejtivp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lihkfwcxdq .gt_row_group_first th {
+#zbtxejtivp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lihkfwcxdq .gt_summary_row {
+#zbtxejtivp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1479,16 +1479,16 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#lihkfwcxdq .gt_first_summary_row {
+#zbtxejtivp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#lihkfwcxdq .gt_first_summary_row.thick {
+#zbtxejtivp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lihkfwcxdq .gt_last_summary_row {
+#zbtxejtivp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1498,7 +1498,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#lihkfwcxdq .gt_grand_summary_row {
+#zbtxejtivp .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1508,7 +1508,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#lihkfwcxdq .gt_first_grand_summary_row {
+#zbtxejtivp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1518,7 +1518,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-color: #5F5F5F;
 }
 
-#lihkfwcxdq .gt_last_grand_summary_row_top {
+#zbtxejtivp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1528,11 +1528,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#lihkfwcxdq .gt_striped {
+#zbtxejtivp .gt_striped {
   background-color: #F4F4F4;
 }
 
-#lihkfwcxdq .gt_table_body {
+#zbtxejtivp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1541,7 +1541,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#lihkfwcxdq .gt_footnotes {
+#zbtxejtivp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1555,7 +1555,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#lihkfwcxdq .gt_footnote {
+#zbtxejtivp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1564,7 +1564,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#lihkfwcxdq .gt_sourcenotes {
+#zbtxejtivp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1578,7 +1578,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#lihkfwcxdq .gt_sourcenote {
+#zbtxejtivp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1586,63 +1586,63 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#lihkfwcxdq .gt_left {
+#zbtxejtivp .gt_left {
   text-align: left;
 }
 
-#lihkfwcxdq .gt_center {
+#zbtxejtivp .gt_center {
   text-align: center;
 }
 
-#lihkfwcxdq .gt_right {
+#zbtxejtivp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lihkfwcxdq .gt_font_normal {
+#zbtxejtivp .gt_font_normal {
   font-weight: normal;
 }
 
-#lihkfwcxdq .gt_font_bold {
+#zbtxejtivp .gt_font_bold {
   font-weight: bold;
 }
 
-#lihkfwcxdq .gt_font_italic {
+#zbtxejtivp .gt_font_italic {
   font-style: italic;
 }
 
-#lihkfwcxdq .gt_super {
+#zbtxejtivp .gt_super {
   font-size: 65%;
 }
 
-#lihkfwcxdq .gt_footnote_marks {
+#zbtxejtivp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lihkfwcxdq .gt_asterisk {
+#zbtxejtivp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lihkfwcxdq .gt_indent_1 {
+#zbtxejtivp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lihkfwcxdq .gt_indent_2 {
+#zbtxejtivp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lihkfwcxdq .gt_indent_3 {
+#zbtxejtivp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lihkfwcxdq .gt_indent_4 {
+#zbtxejtivp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lihkfwcxdq .gt_indent_5 {
+#zbtxejtivp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1711,10 +1711,12 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
+<p><br> <br></p>
 </section>
 <section id="exclamation-points" class="level3">
 <h3 class="anchored" data-anchor-id="exclamation-points">Exclamation points</h3>
-<p>F. Scott Fitzgerald and Earnest Hemingway were known for their very resvered use of exclamation points. Fizgerald describes it as “Laughing at your own joke.” We can use this data to determine how well Arthur Conan Doyle follows this rule.</p>
+<p>The analysis from Blatt that I’m interested in replicating is his exclamation point analysis.</p>
+<p>F. Scott Fitzgerald and Earnest Hemingway were known for their very resvered use of exclamation points. Fizgerald describes it as “Laughing at your own joke.” We can use this data to determine how well Arthur Conan Doyle follows this rule. <br> <br></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exclamation_points <span class="ot">&lt;-</span> paragraphs <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">exclamation_points =</span> <span class="fu">str_count</span>(text, <span class="st">"!"</span>))</span>
@@ -1732,23 +1734,23 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="khtmdjaoxi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
-<style>#khtmdjaoxi table {
+<div id="dcnkmivbxt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#dcnkmivbxt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#khtmdjaoxi thead, #khtmdjaoxi tbody, #khtmdjaoxi tfoot, #khtmdjaoxi tr, #khtmdjaoxi td, #khtmdjaoxi th {
+#dcnkmivbxt thead, #dcnkmivbxt tbody, #dcnkmivbxt tfoot, #dcnkmivbxt tr, #dcnkmivbxt td, #dcnkmivbxt th {
   border-style: none;
 }
 
-#khtmdjaoxi p {
+#dcnkmivbxt p {
   margin: 0;
   padding: 0;
 }
 
-#khtmdjaoxi .gt_table {
+#dcnkmivbxt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1774,12 +1776,12 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#khtmdjaoxi .gt_caption {
+#dcnkmivbxt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#khtmdjaoxi .gt_title {
+#dcnkmivbxt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1791,7 +1793,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#khtmdjaoxi .gt_subtitle {
+#dcnkmivbxt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1803,7 +1805,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#khtmdjaoxi .gt_heading {
+#dcnkmivbxt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1815,13 +1817,13 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#khtmdjaoxi .gt_bottom_border {
+#dcnkmivbxt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#khtmdjaoxi .gt_col_headings {
+#dcnkmivbxt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1836,7 +1838,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#khtmdjaoxi .gt_col_heading {
+#dcnkmivbxt .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1856,7 +1858,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#khtmdjaoxi .gt_column_spanner_outer {
+#dcnkmivbxt .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1868,15 +1870,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#khtmdjaoxi .gt_column_spanner_outer:first-child {
+#dcnkmivbxt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#khtmdjaoxi .gt_column_spanner_outer:last-child {
+#dcnkmivbxt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#khtmdjaoxi .gt_column_spanner {
+#dcnkmivbxt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1888,11 +1890,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#khtmdjaoxi .gt_spanner_row {
+#dcnkmivbxt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#khtmdjaoxi .gt_group_heading {
+#dcnkmivbxt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1918,7 +1920,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#khtmdjaoxi .gt_empty_group_heading {
+#dcnkmivbxt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1933,15 +1935,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#khtmdjaoxi .gt_from_md > :first-child {
+#dcnkmivbxt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#khtmdjaoxi .gt_from_md > :last-child {
+#dcnkmivbxt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#khtmdjaoxi .gt_row {
+#dcnkmivbxt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1960,7 +1962,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#khtmdjaoxi .gt_stub {
+#dcnkmivbxt .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -1973,7 +1975,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#khtmdjaoxi .gt_stub_row_group {
+#dcnkmivbxt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1987,15 +1989,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#khtmdjaoxi .gt_row_group_first td {
+#dcnkmivbxt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#khtmdjaoxi .gt_row_group_first th {
+#dcnkmivbxt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#khtmdjaoxi .gt_summary_row {
+#dcnkmivbxt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2005,16 +2007,16 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#khtmdjaoxi .gt_first_summary_row {
+#dcnkmivbxt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#khtmdjaoxi .gt_first_summary_row.thick {
+#dcnkmivbxt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#khtmdjaoxi .gt_last_summary_row {
+#dcnkmivbxt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2024,7 +2026,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#khtmdjaoxi .gt_grand_summary_row {
+#dcnkmivbxt .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -2034,7 +2036,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#khtmdjaoxi .gt_first_grand_summary_row {
+#dcnkmivbxt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2044,7 +2046,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-color: #5F5F5F;
 }
 
-#khtmdjaoxi .gt_last_grand_summary_row_top {
+#dcnkmivbxt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2054,11 +2056,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#khtmdjaoxi .gt_striped {
+#dcnkmivbxt .gt_striped {
   background-color: #F4F4F4;
 }
 
-#khtmdjaoxi .gt_table_body {
+#dcnkmivbxt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2067,7 +2069,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#khtmdjaoxi .gt_footnotes {
+#dcnkmivbxt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2081,7 +2083,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#khtmdjaoxi .gt_footnote {
+#dcnkmivbxt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2090,7 +2092,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#khtmdjaoxi .gt_sourcenotes {
+#dcnkmivbxt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2104,7 +2106,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#khtmdjaoxi .gt_sourcenote {
+#dcnkmivbxt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2112,63 +2114,63 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#khtmdjaoxi .gt_left {
+#dcnkmivbxt .gt_left {
   text-align: left;
 }
 
-#khtmdjaoxi .gt_center {
+#dcnkmivbxt .gt_center {
   text-align: center;
 }
 
-#khtmdjaoxi .gt_right {
+#dcnkmivbxt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#khtmdjaoxi .gt_font_normal {
+#dcnkmivbxt .gt_font_normal {
   font-weight: normal;
 }
 
-#khtmdjaoxi .gt_font_bold {
+#dcnkmivbxt .gt_font_bold {
   font-weight: bold;
 }
 
-#khtmdjaoxi .gt_font_italic {
+#dcnkmivbxt .gt_font_italic {
   font-style: italic;
 }
 
-#khtmdjaoxi .gt_super {
+#dcnkmivbxt .gt_super {
   font-size: 65%;
 }
 
-#khtmdjaoxi .gt_footnote_marks {
+#dcnkmivbxt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#khtmdjaoxi .gt_asterisk {
+#dcnkmivbxt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#khtmdjaoxi .gt_indent_1 {
+#dcnkmivbxt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#khtmdjaoxi .gt_indent_2 {
+#dcnkmivbxt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#khtmdjaoxi .gt_indent_3 {
+#dcnkmivbxt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#khtmdjaoxi .gt_indent_4 {
+#dcnkmivbxt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#khtmdjaoxi .gt_indent_5 {
+#dcnkmivbxt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2187,33 +2189,33 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="book">The Hound of the Baskervilles</td>
-<td class="gt_row gt_right" headers="paragraph">10134</td>
-<td class="gt_row gt_left" headers="text">"Good! My friend and I are also ready for emergencies."</td>
+<td class="gt_row gt_left" headers="book">The Adventure of the Bruce-Partington Plans</td>
+<td class="gt_row gt_right" headers="paragraph">12391</td>
+<td class="gt_row gt_left" headers="text">"Ah, there's the point! Fortunately, it has not come out. The press would be furious if it did. The papers which this wretched youth had in his pocket were the plans of the Bruce-Partington submarine."</td>
 <td class="gt_row gt_right" headers="exclamation_points">1</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left gt_striped" headers="book">His Last Bow</td>
-<td class="gt_row gt_right gt_striped" headers="paragraph">13309</td>
-<td class="gt_row gt_left gt_striped" headers="text">"Ah, I have often marvelled at it myself. The Foreign Minister alone I could have withstood, but when the Premier also deigned to visit my humble roof--! The fact is, Watson, that this gentleman upon the sofa was a bit too good for our people. He was in a class by himself. Things were going wrong, and no one could understand why they were going wrong. Agents were suspected or even caught, but there was evidence of some strong and secret central force. It was absolutely necessary to expose it. Strong pressure was brought upon me to look into the matter. It has cost me two years, Watson, but they have not been devoid of excitement. When I say that I started my pilgrimage at Chicago, graduated in an Irish secret society at Buffalo, gave serious trouble to the constabulary at Skibbareen, and so eventually caught the eye of a subordinate agent of Von Bork, who recommended me as a likely man, you will realize that the matter was complex. Since then I have been honoured by his confidence, which has not prevented most of his plans going subtly wrong and five of his best agents being in prison. I watched them, Watson, and I picked them as they ripened. Well, sir, I hope that you are none the worse!"</td>
-<td class="gt_row gt_right gt_striped" headers="exclamation_points">2</td>
+<td class="gt_row gt_left gt_striped" headers="book">The Adventure of the Missing Three-Quarter</td>
+<td class="gt_row gt_right gt_striped" headers="paragraph">8178</td>
+<td class="gt_row gt_left gt_striped" headers="text">"But if he is never found, eh? Answer me that!"</td>
+<td class="gt_row gt_right gt_striped" headers="exclamation_points">1</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="book">The Valley Of Fear</td>
-<td class="gt_row gt_right" headers="paragraph">10874</td>
-<td class="gt_row gt_left" headers="text">"Impossible!"</td>
-<td class="gt_row gt_right" headers="exclamation_points">1</td>
+<td class="gt_row gt_left" headers="book">The Adventure of the Solitary Cyclist</td>
+<td class="gt_row gt_right" headers="paragraph">6751</td>
+<td class="gt_row gt_left" headers="text">"Oh, Mr. Holmes! As if I should not know him!"</td>
+<td class="gt_row gt_right" headers="exclamation_points">2</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left gt_striped" headers="book">The Valley Of Fear</td>
-<td class="gt_row gt_right gt_striped" headers="paragraph">11415</td>
-<td class="gt_row gt_left gt_striped" headers="text">"Nor did I when I joined it at Philadelphia. It was just a benefit club and a meeting place for one's fellows. Then I heard of this place--curse the hour that the name first fell upon my ears!--and I came to better myself! My God! to better myself! My wife and three children came with me. I started a dry goods store on Market Square, and I prospered well. The word had gone round that I was a Freeman, and I was forced to join the local lodge, same as you did last night. I've the badge of shame on my forearm and something worse branded on my heart. I found that I was under the orders of a black villain and caught in a meshwork of crime. What could I do? Every word I said to make things better was taken as treason, same as it was last night. I can't get away; for all I have in the world is in my store. If I leave the society, I know well that it means murder to me, and God knows what to my wife and children. Oh, man, it is awful--awful!" He put his hands to his face, and his body shook with convulsive sobs.</td>
-<td class="gt_row gt_right gt_striped" headers="exclamation_points">5</td>
+<td class="gt_row gt_left gt_striped" headers="book">The Resident Patient</td>
+<td class="gt_row gt_right gt_striped" headers="paragraph">5393</td>
+<td class="gt_row gt_left gt_striped" headers="text">"Oh, such a business!" he cried, with his hands to his temples.</td>
+<td class="gt_row gt_right gt_striped" headers="exclamation_points">1</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="book">The Adventure of the Golden Pince-Nez</td>
-<td class="gt_row gt_right" headers="paragraph">8047</td>
-<td class="gt_row gt_left" headers="text">"Here! When?"</td>
+<td class="gt_row gt_left" headers="book">The Sign of the Four</td>
+<td class="gt_row gt_right" headers="paragraph">1512</td>
+<td class="gt_row gt_left" headers="text">"'Here they are!' I exclaimed.</td>
 <td class="gt_row gt_right" headers="exclamation_points">1</td>
 </tr>
 </tbody>
@@ -2240,23 +2242,23 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> exclamation_points, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="zvvurhfrdc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:500px;">
-<style>#zvvurhfrdc table {
+<div id="ssltvxvupl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:500px;">
+<style>#ssltvxvupl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zvvurhfrdc thead, #zvvurhfrdc tbody, #zvvurhfrdc tfoot, #zvvurhfrdc tr, #zvvurhfrdc td, #zvvurhfrdc th {
+#ssltvxvupl thead, #ssltvxvupl tbody, #ssltvxvupl tfoot, #ssltvxvupl tr, #ssltvxvupl td, #ssltvxvupl th {
   border-style: none;
 }
 
-#zvvurhfrdc p {
+#ssltvxvupl p {
   margin: 0;
   padding: 0;
 }
 
-#zvvurhfrdc .gt_table {
+#ssltvxvupl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2282,12 +2284,12 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_caption {
+#ssltvxvupl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zvvurhfrdc .gt_title {
+#ssltvxvupl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2299,7 +2301,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#zvvurhfrdc .gt_subtitle {
+#ssltvxvupl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2311,7 +2313,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#zvvurhfrdc .gt_heading {
+#ssltvxvupl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2323,13 +2325,13 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_bottom_border {
+#ssltvxvupl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_col_headings {
+#ssltvxvupl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2344,7 +2346,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_col_heading {
+#ssltvxvupl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2364,7 +2366,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#zvvurhfrdc .gt_column_spanner_outer {
+#ssltvxvupl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2376,15 +2378,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#zvvurhfrdc .gt_column_spanner_outer:first-child {
+#ssltvxvupl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zvvurhfrdc .gt_column_spanner_outer:last-child {
+#ssltvxvupl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zvvurhfrdc .gt_column_spanner {
+#ssltvxvupl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2396,11 +2398,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#zvvurhfrdc .gt_spanner_row {
+#ssltvxvupl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zvvurhfrdc .gt_group_heading {
+#ssltvxvupl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2426,7 +2428,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#zvvurhfrdc .gt_empty_group_heading {
+#ssltvxvupl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2441,15 +2443,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#zvvurhfrdc .gt_from_md > :first-child {
+#ssltvxvupl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zvvurhfrdc .gt_from_md > :last-child {
+#ssltvxvupl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zvvurhfrdc .gt_row {
+#ssltvxvupl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2468,7 +2470,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#zvvurhfrdc .gt_stub {
+#ssltvxvupl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2481,7 +2483,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#zvvurhfrdc .gt_stub_row_group {
+#ssltvxvupl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2495,15 +2497,15 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#zvvurhfrdc .gt_row_group_first td {
+#ssltvxvupl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zvvurhfrdc .gt_row_group_first th {
+#ssltvxvupl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zvvurhfrdc .gt_summary_row {
+#ssltvxvupl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2513,16 +2515,16 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#zvvurhfrdc .gt_first_summary_row {
+#ssltvxvupl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_first_summary_row.thick {
+#ssltvxvupl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zvvurhfrdc .gt_last_summary_row {
+#ssltvxvupl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2532,7 +2534,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_grand_summary_row {
+#ssltvxvupl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2542,7 +2544,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#zvvurhfrdc .gt_first_grand_summary_row {
+#ssltvxvupl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2552,7 +2554,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-top-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_last_grand_summary_row_top {
+#ssltvxvupl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2562,11 +2564,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_striped {
+#ssltvxvupl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zvvurhfrdc .gt_table_body {
+#ssltvxvupl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2575,7 +2577,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-bottom-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_footnotes {
+#ssltvxvupl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2589,7 +2591,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_footnote {
+#ssltvxvupl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2598,7 +2600,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#zvvurhfrdc .gt_sourcenotes {
+#ssltvxvupl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2612,7 +2614,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#zvvurhfrdc .gt_sourcenote {
+#ssltvxvupl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2620,63 +2622,63 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#zvvurhfrdc .gt_left {
+#ssltvxvupl .gt_left {
   text-align: left;
 }
 
-#zvvurhfrdc .gt_center {
+#ssltvxvupl .gt_center {
   text-align: center;
 }
 
-#zvvurhfrdc .gt_right {
+#ssltvxvupl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zvvurhfrdc .gt_font_normal {
+#ssltvxvupl .gt_font_normal {
   font-weight: normal;
 }
 
-#zvvurhfrdc .gt_font_bold {
+#ssltvxvupl .gt_font_bold {
   font-weight: bold;
 }
 
-#zvvurhfrdc .gt_font_italic {
+#ssltvxvupl .gt_font_italic {
   font-style: italic;
 }
 
-#zvvurhfrdc .gt_super {
+#ssltvxvupl .gt_super {
   font-size: 65%;
 }
 
-#zvvurhfrdc .gt_footnote_marks {
+#ssltvxvupl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zvvurhfrdc .gt_asterisk {
+#ssltvxvupl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zvvurhfrdc .gt_indent_1 {
+#ssltvxvupl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zvvurhfrdc .gt_indent_2 {
+#ssltvxvupl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zvvurhfrdc .gt_indent_3 {
+#ssltvxvupl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zvvurhfrdc .gt_indent_4 {
+#ssltvxvupl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zvvurhfrdc .gt_indent_5 {
+#ssltvxvupl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2939,8 +2941,8 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>Noteably the 4 highest counts are full novels, while the rest are short stories. It makes sense that they are higher, but they will skew the rest of the analysis.</p>
-<p>In graphical form:</p>
+<p><br> <br> Noteably the 4 highest counts are full novels, while the rest are short stories. It makes sense that they are higher, but they will skew the rest of the analysis.</p>
+<p>In graphical form: <br> <br></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>novels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A Study In Scarlet"</span>,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The Sign of the Four"</span>,</span>
@@ -2951,15 +2953,11 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(book <span class="sc">%in%</span> novels)) <span class="sc">|&gt;</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> publish_order, <span class="at">y =</span> exclamation_points)) <span class="sc">+</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Publish Order"</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Exclamation Points"</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Exclamation Points per Book"</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Publish Order"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Exclamation Points"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Exclamation Points per Book"</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2968,12 +2966,12 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>Graphically, it does not look like Doyle’s use of exclamation points changed over time. We can verify this mathematically.</p>
+<p><br> <br> Graphically, it does not look like Doyle’s use of exclamation points changed over time. We can verify this mathematically. <br> <br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_summary <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(book <span class="sc">%in%</span> novels)) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(exclamation_points <span class="sc">~</span> publish_order, <span class="at">data =</span> _) <span class="sc">|&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_summary <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(book <span class="sc">%in%</span> novels)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(exclamation_points <span class="sc">~</span> publish_order, <span class="at">data =</span> _) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -2996,536 +2994,8 @@ Multiple R-squared:  0.02341,   Adjusted R-squared:  0.0001549
 F-statistic: 1.007 on 1 and 42 DF,  p-value: 0.3214</code></pre>
 </div>
 </div>
-</section>
-<section id="matrix-profile-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="matrix-profile-analysis">Matrix Profile Analysis</h3>
-<p>The <a href="https://www.cs.ucr.edu/~eamonn/MatrixProfile.html">Matrix Profile</a> is a mathematical method used for finding motifs, discords, and other insights in time series data. Text can be transformed into time series data by converting each letter into a number and using the index for time.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate all text for each book</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>book_text <span class="ot">&lt;-</span> paragraphs <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book) <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">text =</span> <span class="fu">paste</span>(text, <span class="at">collapse =</span> <span class="st">" "</span>))</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to convert text to a numerical sequence</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>text_to_numeric <span class="ot">&lt;-</span> <span class="cf">function</span>(text) {</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to lowercase</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  text <span class="ot">&lt;-</span> <span class="fu">tolower</span>(text)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Split into characters</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  chars <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(text, <span class="st">""</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert characters to numbers</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(chars, <span class="cf">function</span>(char) {</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">utf8ToInt</span>(char) </span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function to each book's text</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>numerical_text <span class="ot">&lt;-</span> book_text <span class="sc">|&gt;</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numeric_representation =</span> <span class="fu">map</span>(text, text_to_numeric))</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display a sample of the numerical representation</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>numerical_text <span class="sc">|&gt;</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numeric_sample =</span> <span class="fu">map_chr</span>(numeric_representation, <span class="sc">~</span> <span class="fu">paste</span>(<span class="fu">head</span>(.x, <span class="dv">20</span>), <span class="at">collapse =</span> <span class="st">", "</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">text_sample =</span> <span class="fu">map_chr</span>(numeric_representation, <span class="sc">~</span><span class="fu">intToUtf8</span>(<span class="fu">head</span>(.x, <span class="dv">20</span>)))) <span class="sc">|&gt;</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(book, text_sample, numeric_sample) <span class="sc">|&gt;</span></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Numerical Representation of Book Text (First 20 Characters)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">book =</span> <span class="st">"Book"</span>,</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">text_sample =</span> <span class="st">"Text Sample"</span>,</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">numeric_sample =</span> <span class="st">"Numerical Sequence"</span></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="civlrgfgyc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#civlrgfgyc table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#civlrgfgyc thead, #civlrgfgyc tbody, #civlrgfgyc tfoot, #civlrgfgyc tr, #civlrgfgyc td, #civlrgfgyc th {
-  border-style: none;
-}
-
-#civlrgfgyc p {
-  margin: 0;
-  padding: 0;
-}
-
-#civlrgfgyc .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#civlrgfgyc .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#civlrgfgyc .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#civlrgfgyc .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#civlrgfgyc .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#civlrgfgyc .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#civlrgfgyc .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#civlrgfgyc .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#civlrgfgyc .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#civlrgfgyc .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#civlrgfgyc .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#civlrgfgyc .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#civlrgfgyc .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#civlrgfgyc .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#civlrgfgyc .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#civlrgfgyc .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#civlrgfgyc .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#civlrgfgyc .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#civlrgfgyc .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#civlrgfgyc .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#civlrgfgyc .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#civlrgfgyc .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#civlrgfgyc .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#civlrgfgyc .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#civlrgfgyc .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#civlrgfgyc .gt_left {
-  text-align: left;
-}
-
-#civlrgfgyc .gt_center {
-  text-align: center;
-}
-
-#civlrgfgyc .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#civlrgfgyc .gt_font_normal {
-  font-weight: normal;
-}
-
-#civlrgfgyc .gt_font_bold {
-  font-weight: bold;
-}
-
-#civlrgfgyc .gt_font_italic {
-  font-style: italic;
-}
-
-#civlrgfgyc .gt_super {
-  font-size: 65%;
-}
-
-#civlrgfgyc .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#civlrgfgyc .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#civlrgfgyc .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#civlrgfgyc .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#civlrgfgyc .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#civlrgfgyc .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#civlrgfgyc .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_heading header">
-<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Numerical Representation of Book Text (First 20 Characters)</td>
-</tr>
-<tr class="gt_col_headings even">
-<th id="Book" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Book</th>
-<th id="Text Sample" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Text Sample</th>
-<th id="Numerical Sequence" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Numerical Sequence</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="book">The Boscombe Valley Mystery</td>
-<td class="gt_row gt_left" headers="text_sample">the boscombe valley</td>
-<td class="gt_row gt_right" headers="numeric_sample">116, 104, 101, 32, 98, 111, 115, 99, 111, 109, 98, 101, 32, 118, 97, 108, 108, 101, 121, 32</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="book">The Adventure of the Red Circle</td>
-<td class="gt_row gt_left" headers="text_sample">the adventure of the</td>
-<td class="gt_row gt_right" headers="numeric_sample">116, 104, 101, 32, 97, 100, 118, 101, 110, 116, 117, 114, 101, 32, 111, 102, 32, 116, 104, 101</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="book">The Five Orange Pips</td>
-<td class="gt_row gt_left" headers="text_sample">the five orange pips</td>
-<td class="gt_row gt_right" headers="numeric_sample">116, 104, 101, 32, 102, 105, 118, 101, 32, 111, 114, 97, 110, 103, 101, 32, 112, 105, 112, 115</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="book">The Adventure of the Six Napoleons</td>
-<td class="gt_row gt_left" headers="text_sample">the adventure of the</td>
-<td class="gt_row gt_right" headers="numeric_sample">116, 104, 101, 32, 97, 100, 118, 101, 110, 116, 117, 114, 101, 32, 111, 102, 32, 116, 104, 101</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="book">The Adventure of the Priory School</td>
-<td class="gt_row gt_left" headers="text_sample">the adventure of the</td>
-<td class="gt_row gt_right" headers="numeric_sample">116, 104, 101, 32, 97, 100, 118, 101, 110, 116, 117, 114, 101, 32, 111, 102, 32, 116, 104, 101</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Next, we can apply the matrix profile. The only parameter input required is the size of a subsequence to use in our search. I’m going to follow classic Twitter’s paradigm and us a character length of 140</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>book1 <span class="ot">&lt;-</span> numerical_text <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(book <span class="sc">==</span> <span class="st">"The Sign of the Four"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(numeric_representation)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p><br> <br></p>
+<p>Sometimes there’s not anything particularly exciting with a type of analysis; sometimes just seeing that he remains consistent throughout is career as an awesome insight in itself.</p>
 
 
 </section>
