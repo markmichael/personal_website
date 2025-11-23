@@ -1,0 +1,114 @@
+---
+title: "Squadsgiving Gantt"
+date: "2025-11-29"
+---
+
+```{mermaid}
+gantt
+  title Squadsgiving Prep
+  dateFormat YYYY-MM-DD HH:mm
+  axisFormat %d-%H:%M
+  
+  section Turkey
+    Capture Turkey :milestone, 2024-11-14 14:30, 0d 
+    Thaw Turkey: t2, 2024-11-14 14:30, 16h
+    Apply dry brine: t3, after t2, 30m 
+    Dry brine: t4, after t3, 2024-11-16 10:00
+
+  section Green Bean Casserole
+    Thaw green beans: t15, 2024-11-15 16:00, 1.5h
+    Mushroom Roux: t15a, after t15, 30m
+    Assemble Casserole: t16, after t15a, 10m
+```
+
+```{mermaid}
+gantt
+  title Squadsgiving - Day Of
+  dateFormat YYYY-MM-DD HH:mm
+  axisFormat %H:%M
+  
+  section Turkey
+    Apply rub: t5, 2024-11-16 10:00, 30m
+    Smoke Turkey: t7, 2024-11-16 12:00, 4.5h
+    Rest Turkey: t8, 2024-11-16 16:30, 1.5h
+    Carve Turkey :milestone, m2, 2024-11-16 18:00, 0d
+
+  section Mac and cheese
+    Prep sauce: t9, 2024-11-16 15:30, 30m
+    Cook pasta: t10, 2024-11-16 15:45, 10m
+    Assemble and add panko: t11, 2024-11-16 15:55, 5m
+    smoke mac and cheese: t12, 2024-11-16 16:00, 1h
+  
+  section Baked Brie
+    Prep Baked Brie: t13, 2024-11-16 13:00, 30m
+    Bake Baked Brie: t14, 2024-11-16 17:00, 25m
+
+  section Green Bean Casserole
+    Add French's Onions: t17, 2024-11-16 17:00, 5m
+    Bake Casserole: t18, after t17, 45m
+
+  section Mashed Potaters
+    Chop Potaters: t19, 2024-11-16 16:00, 20m
+    Boil Potaters: t20, 2024-11-16 18:00, 30m
+    Mash Potaters: t21, 2024-11-16 18:30, 30m
+    Season: t22, 2024-11-16 19:00, 30m 
+```
+
+
+```{mermaid}
+gantt
+    dateFormat  YYYY-MM-DD HH:mm
+    title       Squadsgiving Preparation Schedule
+
+    section Gathering Ingredients
+    Gather Ingredients        :h1, 2024-11-14 14:00, 2h
+
+    section Cranberry Sauce
+    Make Cranberry Sauce      :h1, 2024-11-14 16:00, 1h
+
+    section Pumpkin Cheesecake
+    Make Pumpkin Cheesecake   :h2, 2024-11-14 17:00, 2h
+    Refrigerate Cheesecake    :h2, after Make Pumpkin Cheesecake, 2024-11-15 07:00
+
+    section Pumpkin Spice Coconut Macaroons
+    Make Macaroons            :h1, 2024-11-14 17:00, 2h
+
+    section Stuffing
+    Prepare Bread Cubes       :h2, 2024-11-14 16:00, 1h
+    Prepare Stuffing          :h1, 2024-11-15 12:00, 2h
+    Bake Stuffing             :h3, 2024-11-16 15:00, 1h
+
+    section Sweet Potato Casserole
+    Prepare Sweet Potato Casserole :h2, 2024-11-15 09:00, 2h
+    Bake Sweet Potato Casserole    :h3, 2024-11-16 16:00, 30m
+
+    section Shepherd's Pie
+    Prepare Shepherd's Pie     :h1, 2024-11-15 14:00, 2h
+    Bake Shepherd's Pie        :h3, 2024-11-16 15:00, 35m
+
+    section Green Bean Casserole
+    Prepare Green Bean Casserole :h2, 2024-11-15 12:00, 1h
+    Bake Green Bean Casserole    :h3, 2024-11-16 16:30, 25m
+
+    section Smoked Turkey
+    (Optional) Brine Turkey    :h1, 2024-11-15 09:00, 12h
+    Season and Dry Turkey      :h1, 2024-11-15 21:00, 1h
+    Smoke Turkey               :h1, 2024-11-16 05:00, 10h
+    Rest Turkey                :h1, after Smoke Turkey, 1h
+
+    section Smoked Mac and Cheese
+    Prepare Mac and Cheese     :h2, 2024-11-15 14:00, 2h
+    Smoke Mac and Cheese       :h2, 2024-11-16 15:00, 1h
+
+    section Baked Brie
+    Prepare Baked Brie         :h2, 2024-11-16 13:00, 30m
+    Bake Baked Brie            :h2, 2024-11-16 17:00, 25m
+
+    section Final Preparations
+    Carve Turkey               :h1, after Rest Turkey, 30m
+    Set Table and Serve        :h2,2024-11-16 17:30,30m
+
+
+```
+
+
