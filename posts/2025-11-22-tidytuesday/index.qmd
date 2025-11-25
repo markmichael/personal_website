@@ -158,3 +158,25 @@ exclamation_points_summary |>
 <br> <br>
 
 Sometimes there's not anything particularly exciting with a type of analysis; sometimes just seeing that he remains consistent throughout is career as an awesome insight in itself.
+
+### Edit 2025-11-24
+
+I received an excellent suggestion around normalization: <br>
+
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:777eanw7giyjd76dwatpch3d/app.bsky.feed.post/3m6ffv3zjsc24" data-bluesky-cid="bafyreigbi7aq7jcevml26qhusk5wwnnfc6nredwekdtnc3uevhvulotriq" data-bluesky-embed-color-mode="system"><p lang="en">Excellent!! It would be cool to see exclamation marks divided by word count! Since longer works will have more by nature! How many exclamation marks can I get in this post?! 😂</p>&mdash; Libby Heeren (<a href="https://bsky.app/profile/did:plc:777eanw7giyjd76dwatpch3d?ref_src=embed">@libbyheeren.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:777eanw7giyjd76dwatpch3d/post/3m6ffv3zjsc24?ref_src=embed">November 24, 2025 at 10:02 AM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+
+<br>
+
+Indeed, just because I only included the short stories in the previous visualisation does not mean that all of Doyle's short stories are same length, and therefore, the absolute count comparision might not necessarily be fair. That said, there is one more method for normalization that is also worth considering. Hemingway would argue that most exclamation points should be replaced with periods. In addition to the above suggestion, I will also normalize by the dividing the sum of terminal periods and exclamation points. This one is a bit more tricky. I don't want to count "Dr." or "1." as sentences. To correct for this, I will count periods immediately after a word that has at least one lowercase vowel.
+
+```{r}
+
+exclamation_points_normalization <- paragraphs |>
+  mutate(exclamation_points = str_count(text, "!"),
+         words = lengths(str_split(text, " ")),
+         terminal_periods = str_count(text, "\\b\\w*[aeiou]\\w*\\.")
+         ) |>
+  slice_sample(n=2000:2010)
+
+```
+
