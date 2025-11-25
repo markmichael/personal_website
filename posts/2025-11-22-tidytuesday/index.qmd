@@ -174,9 +174,84 @@ Indeed, just because I only included the short stories in the previous visualisa
 exclamation_points_normalization <- paragraphs |>
   mutate(exclamation_points = str_count(text, "!"),
          words = lengths(str_split(text, " ")),
-         terminal_periods = str_count(text, "\\b\\w*[aeiou]\\w*\\.")
-         ) |>
-  slice_sample(n=2000:2010)
+         terminal_periods = str_count(text, "\\b\\w*[aeiou]\\w*\\.") #thanks chatGPT
+         )
+sample <- exclamation_points_normalization |>
+  ungroup() |>
+  filter(exclamation_points > 0) |>
+  filter(terminal_periods > 0) |>
+  slice_sample(n=5)
+
+sample |> #Trust but verify
+  gt() |>
+  tab_header(title = "Sample of Punctuation and Word Counts") |>
+  opt_stylize(style = 6, color = "gray") |>
+  tab_options(container.height = "300px", container.overflow.y = "scroll") 
+
+```
+
+<br> <br>
+
+```{r}
+
+exclamation_points_normalization_summary <- exclamation_points_normalization |>
+  group_by(book) |>
+  summarize(exclamation_points = sum(exclamation_points),
+            terminal_periods = sum(terminal_periods),
+            words = sum(words),
+            exclamation_point_per_word = exclamation_points / words,
+            exclamation_point_per_sentence_ending = exclamation_points / (terminal_periods + exclamation_points)) |>
+  left_join(books, by = "book")
+
+metrics <- tibble(
+  Metric = c("Most Exclamations", "Least Exclamations", "Most Exclamations per Word", "Least Exclamations per Word", "Most Exclamations per Sentence Ending", "Least Exclamations per Sentence Ending"),
+  book = c(
+    exclamation_points_normalization_summary$book[which.max(exclamation_points_normalization_summary$exclamation_points)],
+    exclamation_points_normalization_summary$book[which.min(exclamation_points_normalization_summary$exclamation_points)],
+    exclamation_points_normalization_summary$book[which.max(exclamation_points_normalization_summary$exclamation_point_per_word)],
+    exclamation_points_normalization_summary$book[which.min(exclamation_points_normalization_summary$exclamation_point_per_word)],
+    exclamation_points_normalization_summary$book[which.max(exclamation_points_normalization_summary$exclamation_point_per_sentence_ending)],
+    exclamation_points_normalization_summary$book[which.min(exclamation_points_normalization_summary$exclamation_point_per_sentence_ending)]
+  ),
+  Value = c(
+    max(exclamation_points_normalization_summary$exclamation_points),
+    min(exclamation_points_normalization_summary$exclamation_points),
+    max(exclamation_points_normalization_summary$exclamation_point_per_word),
+    min(exclamation_points_normalization_summary$exclamation_point_per_word),
+    max(exclamation_points_normalization_summary$exclamation_point_per_sentence_ending),
+    min(exclamation_points_normalization_summary$exclamation_point_per_sentence_ending)
+  )
+)
+
+metrics |>
+  gt() |>
+  cols_label(
+    book = "Book",
+    Value = "Value"
+  ) |>
+  fmt_number(columns = Value, decimals = 4) |>
+  tab_header(title = "Exclamation Point Usage Summary")
+
+```
+
+<br> <br>
+
+```{r}
+
+exclamation_points_normalization_summary_for_plot <- exclamation_points_normalization_summary |>
+  pivot_longer(cols = c(exclamation_point_per_word, exclamation_point_per_sentence_ending)) |>
+  mutate(name = recode(name,
+                         "exclamation_point_per_word" = "Per Word",
+                         "exclamation_point_per_sentence_ending" = "Per Sentence Ending"))
+
+exclamation_normalization_plot <- exclamation_points_normalization_summary_for_plot |>
+  ggplot(aes(x = publish_order, y = value)) +
+  facet_wrap(~name, scales = "free_y") +
+  geom_point() +
+  labs(x = "Publish Order",
+       y = NULL,
+       title = "Normalized Exclamation Point Usage")
+exclamation_normalization_plot
 
 ```
 
