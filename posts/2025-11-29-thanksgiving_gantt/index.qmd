@@ -1,16 +1,18 @@
 ---
 title: "Thanksgiving, but make it Gantt"
 date: "2025-11-29"
+echo: true
 ---
 
 Thanksgiving is one of my favorite holidays. After reading the impassioned arguments of [Brunch is Hell: How to save the world by throwing a dinner party](https://www.brunchishell.com/brunch-is-hell),  For about the past 10 years, I've been hosting a friendsgiving and cooking mostly everything on my own (the past couple years I've had some help and a good opportunity to practice delegation). It's challenging, especially the last couple hours when several different things are in the oven and on the stove at the same time. The most important thing is to make a plan that you can refer to amidst the chaos. 
 
-One of my favorite organization tools is [mermaid.js](mermaid.js.org). It allows you to create various diagrams such as flow charts and gantt charts using code. This makes it really easy to edit because you can focus on the content and not have to worry about spacing, making sure arrows are straight, or selecting groups of objects to move down in order to make room for something in the middle. It also means that you can describe your process to ChatGPT or other AI tool of choice and it'll give you a pretty good start that you can just copy and paste into a markdown document.
+One of my favorite organization tools is [`mermaid.js`](https://mermaid.js.org). It allows you to create various diagrams such as flow charts and gantt charts using code. This makes it really easy to edit because you can focus on the content and not have to worry about spacing, making sure arrows are straight, or selecting groups of objects to move down in order to make room for something in the middle. It also means that you can describe your process to ChatGPT or other AI tool of choice and it'll give you a pretty good start that you can just copy and paste into a markdown document.
 
 To demonstrate both the power of mermaid.js and how you can prepare a potluck-less Friendsgiving, I've diagrammed my process below and also included some reference recipes for the various dishes.
 
 ```{mermaid}
 gantt
+
   title Thanksgiving Prep - Before Thanksgiving
   dateFormat YYYY-MM-DD HH:mm
   axisFormat %d-%H:%M
@@ -18,13 +20,13 @@ gantt
   section Turkey
     Buy frozen turkey :milestone, 2025-11-18 14:30, 0d 
     Thaw turkey: t2, 2025-11-20 14:30, 4d
-    Dry brine: t4, after t3, 2025-11-24 14:30, 2d
+    Dry brine: t4, 2025-11-24 14:30, 2d
 
   section Cheesecake
-    Take cream cheese out of fridge :milestone t14, 2025-11-25 17:15, 0d 
+    Take cream cheese out of fridge :milestone, 2025-11-25 17:15, 0d 
     Crust: t15, 2025-11-26 18:00, 15m 
-    Filling: t15a, after t15, 20m
-    Bake: t16, after t15a, 75m 
+    Filling: t15a, 2025-11-26 18:15, 20m
+    Bake: t16, 2025-11-26 18:35, 75m 
 ```
 
 
@@ -40,98 +42,61 @@ gantt
     Rest Turkey: t8, 2025-11-27 16:30, 1.5h
 
   section Mac and cheese
-    Prep sauce: t9, 2025-11-27 15:30, 30m
-    Cook pasta: t10, 2025-11-27 15:45, 10m
-    Assemble and add panko: t11, 2025-11-27 15:55, 5m
-    smoke mac and cheese: t12, 2025-11-27 16:00, 1h
+    Prep sauce: 2025-11-27 16:15, 30m
+    Cook pasta: 2025-11-27 16:45, 10m
+    Assemble and add panko: 2025-11-27 16:55, 5m
+    smoke mac and cheese: 2025-11-27 17:00, 1h
   
   section Baked Brie
-    Prep Baked Brie: t13, 2025-11-27 13:00, 10m
-    Bake Baked Brie: t14, 2025-11-27 17:00, 25m
+    Prep Baked Brie: t13, 2025-11-27 17:00, 10m
+    Bake Baked Brie: t14, 2025-11-27 17:30, 25m
 
   section Green Bean Casserole
     Thaw green beans: t17c, 2025-11-27 08:00, 1h
     Prepare Roux: t17a, 2025-11-27 10:00, 20m
-    Mix in green beans: t17b, after Prepare Roux, 7m
-    Add French's Onions: t17, 2025-11-27 17:00, 5m
-    Bake Casserole: t18, after t17, 45m
+    Mix in green beans: t17b, 2025-11-27 10:20, 7m
+    Add French's Onions: 2025-11-27 17:10, 5m
+    Bake Casserole: t18, 2025-11-27 17:15, 45m
 
   section Mashed Potatoes
-    Chop Potatoes: t19, 2025-11-27 16:00, 15m
-    Boil Potatoes: t20, 2025-11-27 18:00, 40m
-    Mash Potatoes: t21, 2025-11-27 18:40, 10m
+    Chop Potatoes: 2025-11-27 16:55, 15m
+    Boil Potatoes: 2025-11-27 17:10, 40m
+    Mash Potatoes: 2025-11-27 17:50, 10m
 
   section Sweet Potatoes
-    Chop Potatoes: t19, 2025-11-27 16:00, 15m
-    Boil Potatoes: t20, 2025-11-27 18:00, 40m
-    Mash Potatoes: t21, 2025-11-27 18:40, 10m
-    Prepare Casserole: t22, 2025-11-27 18:50, 10m
-    Bake Casserole: t23, 2025-11-27 19:00, 30m
+    Chop Potatoes: 2025-11-27 16:15, 15m
+    Boil Potatoes: 2025-11-27 16:30, 40m
+    Mash Potatoes: 2025-11-27 17:10, 10m
+    Prepare Casserole: 2025-11-27 17:20, 10m
+    Bake Casserole: 2025-11-27 17:30, 30m
 
   section Stuffing
-    Chop and toast bread: 
+    Chop and toast bread: 2025-11-27 10:30, 30m
+    Saute vegetables: 2025-11-27 14:00, 30m
+    Combine stock mixture, bread, and vegetables: 2025-11-27 17:00, 30m
+    Bake Stuffing: 2025-11-27 17:30, 30m
+
+  section Cranberry Sauce
+    Simmer cranberries, sugar, and spices: 2025-11-27 16:00, 30m
+    Cool: 2025-11-27 16:30, 1.5h
+
 ```
 
 *Important Notes*  
 
-If you can find a refrigerated (not frozen), air-chilled turkey, go for that one. Antibiotic-free doesn't mean anything, at least in the US, federal law requires all poultry to be antibiotic-free. Fancy heirloom turkeys are nice, but not $12/lb nice. If you hosting a Friendsgiving earlier in November, don't wait until the last minute thinking you can find a refrigerated turkey unless you've already identified and confirmed a source. They are definitely harder to find and the [speed-thawing process for frozen turkey](https://www.thekitchn.com/how-to-safely-thaw-a-turkey-225724) is painful.  
+If you can find a refrigerated (not frozen), air-chilled turkey, go for that one. Antibiotic-free doesn't mean anything, at least in the US, federal law requires all poultry to be antibiotic-free. Fancy heirloom turkeys are nice, but not $12/lb nice. If you hosting a Friendsgiving earlier in November, don't wait until the last minute thinking you can find a refrigerated turkey unless you've already identified and confirmed a source. They are definitely harder to find and the [speed-thawing process for frozen turkey](https://www.thekitchn.com/how-to-safely-thaw-a-turkey-225724) is painful.    
 
+Watch [this video](https://www.youtube.com/watch?v=nimSejyW2Sk) before smoking your turkey. Aaron Franklin is truly a scholar in the world of smoked foods.
 
+I adapted the smoked mac and cheese recipe from [here](https://heygrillhey.com/smoked-mac-and-cheese/). I very rarely have leftovers.  
 
-```{mermaid}
-gantt
-    dateFormat  YYYY-MM-DD HH:mm
-    title       Squadsgiving Preparation Schedule
+Other recipes:  
 
-    section Gathering Ingredients
-    Gather Ingredients        :h1, 2024-11-14 14:00, 2h
+  - [Green Bean Casserole](https://www.bonappetit.com/recipes/green-bean-casserole)
+  - [Stuffing](https://www.thekitchn.com/holiday-recipe-classic-sage-onion-dressing-recipes-from-the-kitchn-196063)
 
-    section Cranberry Sauce
-    Make Cranberry Sauce      :h1, 2024-11-14 16:00, 1h
+For everything else, I mostly just winged it. Apply heat to the ingredients, and mix in some reasonable spices.  
 
-    section Pumpkin Cheesecake
-    Make Pumpkin Cheesecake   :h2, 2024-11-14 17:00, 2h
-    Refrigerate Cheesecake    :h2, after Make Pumpkin Cheesecake, 2024-11-15 07:00
+Importantly, I smoked my turkey which I believe is the superior cooking method. A major stressor in Thanksgiving is that usually when the turkey is in the oven, nothing else can go in. Moving the turkey to an alternative cooking space (second oven, smoker, sous vide) makes things a lot easier. 
 
-    section Pumpkin Spice Coconut Macaroons
-    Make Macaroons            :h1, 2024-11-14 17:00, 2h
-
-    section Stuffing
-    Prepare Bread Cubes       :h2, 2024-11-14 16:00, 1h
-    Prepare Stuffing          :h1, 2024-11-15 12:00, 2h
-    Bake Stuffing             :h3, 2024-11-16 15:00, 1h
-
-    section Sweet Potato Casserole
-    Prepare Sweet Potato Casserole :h2, 2024-11-15 09:00, 2h
-    Bake Sweet Potato Casserole    :h3, 2024-11-16 16:00, 30m
-
-    section Shepherd's Pie
-    Prepare Shepherd's Pie     :h1, 2024-11-15 14:00, 2h
-    Bake Shepherd's Pie        :h3, 2024-11-16 15:00, 35m
-
-    section Green Bean Casserole
-    Prepare Green Bean Casserole :h2, 2024-11-15 12:00, 1h
-    Bake Green Bean Casserole    :h3, 2024-11-16 16:30, 25m
-
-    section Smoked Turkey
-    (Optional) Brine Turkey    :h1, 2024-11-15 09:00, 12h
-    Season and Dry Turkey      :h1, 2024-11-15 21:00, 1h
-    Smoke Turkey               :h1, 2024-11-16 05:00, 10h
-    Rest Turkey                :h1, after Smoke Turkey, 1h
-
-    section Smoked Mac and Cheese
-    Prepare Mac and Cheese     :h2, 2024-11-15 14:00, 2h
-    Smoke Mac and Cheese       :h2, 2024-11-16 15:00, 1h
-
-    section Baked Brie
-    Prepare Baked Brie         :h2, 2024-11-16 13:00, 30m
-    Bake Baked Brie            :h2, 2024-11-16 17:00, 25m
-
-    section Final Preparations
-    Carve Turkey               :h1, after Rest Turkey, 30m
-    Set Table and Serve        :h2,2024-11-16 17:30,30m
-
-
-```
-
-
+I hope this is helpful! Feel free to adapt this diagram for your plan and let me know how it goes!

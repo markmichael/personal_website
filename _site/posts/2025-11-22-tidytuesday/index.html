@@ -1,0 +1,4494 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-11-22">
+
+<title>TidyTuesday 2025-11-18 - Sherlock Holmes – mark michael</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c8e7dacb3e1cda0cdb1957ae6c022dec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XV04WJ9C9C"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">mark michael</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/markmichael.dev"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="simple-icons:bluesky" aria-label="Icon bluesky from simple-icons Iconify.design set." title="Icon bluesky from simple-icons Iconify.design set."></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/markmichael2"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/markmichael"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">TidyTuesday 2025-11-18 - Sherlock Holmes</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">data science</div>
+                <div class="quarto-category">tidytuesday</div>
+                <div class="quarto-category">rstats</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 22, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="the-complete-works-of-sherlock-holmes" class="level2">
+<h2 class="anchored" data-anchor-id="the-complete-works-of-sherlock-holmes">The Complete Works of Sherlock Holmes</h2>
+<p>TidyTuesday is a weekly data visualization challenge. The details for this week can be found <a href="https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-11-18">here</a>.</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>Analysing literature with data science and numerical methods is a fun journey. A few years ago I read <a href="https://www.goodreads.com/book/show/30753786-nabokov-s-favorite-word-is-mauve">Nabokov’s favorite word is mauve</a> by Ben Blatt. The methods for quantifying literature are both interesting and compelling, and I’m interested in seeing if there are similar patterns here. Sidenote: that book was described to me as “the most NPR book ever,” and I love that.</p>
+<p>My first step is to explore samples of the data to see if it’s usable as is. <br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>books <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(book) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">publish_order =</span> <span class="fu">row_number</span>())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>text_sample <span class="ot">&lt;-</span> data[<span class="dv">2000</span><span class="sc">:</span><span class="dv">2100</span>,]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>text_sample <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Sample of Text"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="rpmuwkqief" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#rpmuwkqief table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rpmuwkqief thead, #rpmuwkqief tbody, #rpmuwkqief tfoot, #rpmuwkqief tr, #rpmuwkqief td, #rpmuwkqief th {
+  border-style: none;
+}
+
+#rpmuwkqief p {
+  margin: 0;
+  padding: 0;
+}
+
+#rpmuwkqief .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rpmuwkqief .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rpmuwkqief .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rpmuwkqief .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rpmuwkqief .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rpmuwkqief .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rpmuwkqief .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rpmuwkqief .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rpmuwkqief .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rpmuwkqief .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rpmuwkqief .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rpmuwkqief .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rpmuwkqief .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rpmuwkqief .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rpmuwkqief .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#rpmuwkqief .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rpmuwkqief .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rpmuwkqief .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rpmuwkqief .gt_stub {
+  color: #333333;
+  background-color: #D5D5D5;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpmuwkqief .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rpmuwkqief .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rpmuwkqief .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rpmuwkqief .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpmuwkqief .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#rpmuwkqief .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rpmuwkqief .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rpmuwkqief .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpmuwkqief .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#rpmuwkqief .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rpmuwkqief .gt_striped {
+  background-color: #F4F4F4;
+}
+
+#rpmuwkqief .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rpmuwkqief .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rpmuwkqief .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpmuwkqief .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rpmuwkqief .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpmuwkqief .gt_left {
+  text-align: left;
+}
+
+#rpmuwkqief .gt_center {
+  text-align: center;
+}
+
+#rpmuwkqief .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rpmuwkqief .gt_font_normal {
+  font-weight: normal;
+}
+
+#rpmuwkqief .gt_font_bold {
+  font-weight: bold;
+}
+
+#rpmuwkqief .gt_font_italic {
+  font-style: italic;
+}
+
+#rpmuwkqief .gt_super {
+  font-size: 65%;
+}
+
+#rpmuwkqief .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rpmuwkqief .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rpmuwkqief .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rpmuwkqief .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rpmuwkqief .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rpmuwkqief .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rpmuwkqief .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Text</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="book" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">book</th>
+<th id="text" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">text</th>
+<th id="line_num" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">line_num</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'You had best tell me all about it now,' I said. 'Half-confidences</td>
+<td class="gt_row gt_right" headers="line_num">2000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">are worse than none. Besides, you do not know how much we know of</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2001</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">it.'</td>
+<td class="gt_row gt_right" headers="line_num">2002</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2003</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'On your head be it, Alice!' cried her mother; and then, turning to</td>
+<td class="gt_row gt_right" headers="line_num">2004</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">me, 'I will tell you all, sir. Do not imagine that my agitation on</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2005</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">behalf of my son arises from any fear lest he should have had a hand</td>
+<td class="gt_row gt_right" headers="line_num">2006</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">in this terrible affair. He is utterly innocent of it. My dread is,</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2007</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">however, that in your eyes and in the eyes of others he may appear to</td>
+<td class="gt_row gt_right" headers="line_num">2008</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">be compromised. That however is surely impossible. His high</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2009</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">character, his profession, his antecedents would all forbid it.'</td>
+<td class="gt_row gt_right" headers="line_num">2010</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2011</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'Your best way is to make a clean breast of the facts,' I answered.</td>
+<td class="gt_row gt_right" headers="line_num">2012</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">'Depend upon it, if your son is innocent he will be none the worse.'</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2013</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2014</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"'Perhaps, Alice, you had better leave us together,' she said, and</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2015</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">her daughter withdrew. 'Now, sir,' she continued, 'I had no intention</td>
+<td class="gt_row gt_right" headers="line_num">2016</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">of telling you all this, but since my poor daughter has disclosed it</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2017</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">I have no alternative. Having once decided to speak, I will tell you</td>
+<td class="gt_row gt_right" headers="line_num">2018</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">all without omitting any particular.'</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2019</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2020</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"'It is your wisest course,' said I.</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2021</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2022</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"'Mr. Drebber has been with us nearly three weeks. He and his</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2023</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">secretary, Mr. Stangerson, had been travelling on the Continent. I</td>
+<td class="gt_row gt_right" headers="line_num">2024</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">noticed a "Copenhagen" label upon each of their trunks, showing that</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2025</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">that had been their last stopping place. Stangerson was a quiet</td>
+<td class="gt_row gt_right" headers="line_num">2026</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">reserved man, but his employer, I am sorry to say, was far otherwise.</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2027</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">He was coarse in his habits and brutish in his ways. The very night</td>
+<td class="gt_row gt_right" headers="line_num">2028</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">of his arrival he became very much the worse for drink, and, indeed,</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2029</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">after twelve o'clock in the day he could hardly ever be said to be</td>
+<td class="gt_row gt_right" headers="line_num">2030</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">sober. His manners towards the maid-servants were disgustingly free</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2031</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">and familiar. Worst of all, he speedily assumed the same attitude</td>
+<td class="gt_row gt_right" headers="line_num">2032</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">towards my daughter, Alice, and spoke to her more than once in a way</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2033</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">which, fortunately, she is too innocent to understand. On one</td>
+<td class="gt_row gt_right" headers="line_num">2034</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">occasion he actually seized her in his arms and embraced her--an</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2035</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">outrage which caused his own secretary to reproach him for his</td>
+<td class="gt_row gt_right" headers="line_num">2036</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">unmanly conduct.'</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2037</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2038</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"'But why did you stand all this,' I asked. 'I suppose that you can</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2039</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">get rid of your boarders when you wish.'</td>
+<td class="gt_row gt_right" headers="line_num">2040</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2041</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"Mrs. Charpentier blushed at my pertinent question. 'Would to God</td>
+<td class="gt_row gt_right" headers="line_num">2042</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">that I had given him notice on the very day that he came,' she said.</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2043</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">'But it was a sore temptation. They were paying a pound a day</td>
+<td class="gt_row gt_right" headers="line_num">2044</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">each--fourteen pounds a week, and this is the slack season. I am a</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2045</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">widow, and my boy in the Navy has cost me much. I grudged to lose the</td>
+<td class="gt_row gt_right" headers="line_num">2046</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">money. I acted for the best. This last was too much, however, and I</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2047</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">gave him notice to leave on account of it. That was the reason of his</td>
+<td class="gt_row gt_right" headers="line_num">2048</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">going.'</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2049</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2050</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"'Well?'</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2051</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2052</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"'My heart grew light when I saw him drive away. My son is on leave</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2053</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">just now, but I did not tell him anything of all this, for his temper</td>
+<td class="gt_row gt_right" headers="line_num">2054</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">is violent, and he is passionately fond of his sister. When I closed</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2055</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">the door behind them a load seemed to be lifted from my mind. Alas,</td>
+<td class="gt_row gt_right" headers="line_num">2056</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">in less than an hour there was a ring at the bell, and I learned that</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2057</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">Mr. Drebber had returned. He was much excited, and evidently the</td>
+<td class="gt_row gt_right" headers="line_num">2058</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">worse for drink. He forced his way into the room, where I was sitting</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2059</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">with my daughter, and made some incoherent remark about having missed</td>
+<td class="gt_row gt_right" headers="line_num">2060</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">his train. He then turned to Alice, and before my very face, proposed</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2061</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">to her that she should fly with him. "You are of age," he said, "and</td>
+<td class="gt_row gt_right" headers="line_num">2062</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">there is no law to stop you. I have money enough and to spare. Never</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2063</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">mind the old girl here, but come along with me now straight away. You</td>
+<td class="gt_row gt_right" headers="line_num">2064</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">shall live like a princess." Poor Alice was so frightened that she</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2065</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">shrunk away from him, but he caught her by the wrist and endeavoured</td>
+<td class="gt_row gt_right" headers="line_num">2066</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">to draw her towards the door. I screamed, and at that moment my son</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2067</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">Arthur came into the room. What happened then I do not know. I heard</td>
+<td class="gt_row gt_right" headers="line_num">2068</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">oaths and the confused sounds of a scuffle. I was too terrified to</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2069</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">raise my head. When I did look up I saw Arthur standing in the</td>
+<td class="gt_row gt_right" headers="line_num">2070</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">doorway laughing, with a stick in his hand. "I don't think that fine</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2071</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">fellow will trouble us again," he said. "I will just go after him and</td>
+<td class="gt_row gt_right" headers="line_num">2072</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">see what he does with himself." With those words he took his hat and</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2073</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">started off down the street. The next morning we heard of Mr.</td>
+<td class="gt_row gt_right" headers="line_num">2074</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">Drebber's mysterious death.'</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2075</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2076</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"This statement came from Mrs. Charpentier's lips with many gasps and</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2077</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">pauses. At times she spoke so low that I could hardly catch the</td>
+<td class="gt_row gt_right" headers="line_num">2078</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">words. I made shorthand notes of all that she said, however, so that</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2079</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">there should be no possibility of a mistake."</td>
+<td class="gt_row gt_right" headers="line_num">2080</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2081</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"It's quite exciting," said Sherlock Holmes, with a yawn. "What</td>
+<td class="gt_row gt_right" headers="line_num">2082</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">happened next?"</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2083</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">NA</td>
+<td class="gt_row gt_right" headers="line_num">2084</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">"When Mrs. Charpentier paused," the detective continued, "I saw that</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2085</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">the whole case hung upon one point. Fixing her with my eye in a way</td>
+<td class="gt_row gt_right" headers="line_num">2086</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">which I always found effective with women, I asked her at what hour</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2087</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">her son returned.</td>
+<td class="gt_row gt_right" headers="line_num">2088</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2089</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'I do not know,' she answered.</td>
+<td class="gt_row gt_right" headers="line_num">2090</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2091</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'Not know?'</td>
+<td class="gt_row gt_right" headers="line_num">2092</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2093</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'No; he has a latch-key, and he let himself in.'</td>
+<td class="gt_row gt_right" headers="line_num">2094</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2095</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'After you went to bed?'</td>
+<td class="gt_row gt_right" headers="line_num">2096</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2097</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'Yes.'</td>
+<td class="gt_row gt_right" headers="line_num">2098</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left gt_striped" headers="text">NA</td>
+<td class="gt_row gt_right gt_striped" headers="line_num">2099</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_left" headers="text">"'When did you go to bed?'</td>
+<td class="gt_row gt_right" headers="line_num">2100</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><br> <br> The most remarkable thing from the sample is that each observation represents a literal line in the novel. The lines can be concatenated so that each observation is a paragraph. This will be particularly useful in understanding dialog because it is typical in literature to start a new paragraph each time a speaker changes. The NAs between lines mean we have a good boundary between paragraphs.</p>
+<p>Additionally, I cross-referenced the novel order with the <a href="https://en.wikipedia.org/wiki/Canon_of_Sherlock_Holmes">Canon of Sherlock Holmes</a> in order to understand the order in which these works were published. I think it could be interesting to see if there are changes that occur between earlier works and later works. <br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>paragraphs <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">paragraph =</span> <span class="fu">cumsum</span>(<span class="fu">is.na</span>(text))) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(text)) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book,paragraph) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">text =</span> <span class="fu">paste</span>(text, <span class="at">collapse =</span> <span class="st">" "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'book'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>paragraphs_sample <span class="ot">&lt;-</span> paragraphs[<span class="dv">2000</span><span class="sc">:</span><span class="dv">2010</span>,]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>paragraphs_sample <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Sample of Paragraphs"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fjwjqvzdbf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#fjwjqvzdbf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fjwjqvzdbf thead, #fjwjqvzdbf tbody, #fjwjqvzdbf tfoot, #fjwjqvzdbf tr, #fjwjqvzdbf td, #fjwjqvzdbf th {
+  border-style: none;
+}
+
+#fjwjqvzdbf p {
+  margin: 0;
+  padding: 0;
+}
+
+#fjwjqvzdbf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fjwjqvzdbf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fjwjqvzdbf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fjwjqvzdbf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fjwjqvzdbf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fjwjqvzdbf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#fjwjqvzdbf .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fjwjqvzdbf .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fjwjqvzdbf .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fjwjqvzdbf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fjwjqvzdbf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fjwjqvzdbf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fjwjqvzdbf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fjwjqvzdbf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fjwjqvzdbf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#fjwjqvzdbf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fjwjqvzdbf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fjwjqvzdbf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fjwjqvzdbf .gt_stub {
+  color: #333333;
+  background-color: #D5D5D5;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjwjqvzdbf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fjwjqvzdbf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fjwjqvzdbf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fjwjqvzdbf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjwjqvzdbf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#fjwjqvzdbf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fjwjqvzdbf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#fjwjqvzdbf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjwjqvzdbf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#fjwjqvzdbf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#fjwjqvzdbf .gt_striped {
+  background-color: #F4F4F4;
+}
+
+#fjwjqvzdbf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#fjwjqvzdbf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fjwjqvzdbf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjwjqvzdbf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fjwjqvzdbf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjwjqvzdbf .gt_left {
+  text-align: left;
+}
+
+#fjwjqvzdbf .gt_center {
+  text-align: center;
+}
+
+#fjwjqvzdbf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fjwjqvzdbf .gt_font_normal {
+  font-weight: normal;
+}
+
+#fjwjqvzdbf .gt_font_bold {
+  font-weight: bold;
+}
+
+#fjwjqvzdbf .gt_font_italic {
+  font-style: italic;
+}
+
+#fjwjqvzdbf .gt_super {
+  font-size: 65%;
+}
+
+#fjwjqvzdbf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fjwjqvzdbf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fjwjqvzdbf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fjwjqvzdbf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fjwjqvzdbf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fjwjqvzdbf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fjwjqvzdbf .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Paragraphs</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="paragraph" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">paragraph</th>
+<th id="text" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">text</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<td colspan="2" id="The Adventure of Charles Augustus Milverton" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">The Adventure of Charles Augustus Milverton</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_right" headers="The Adventure of Charles Augustus Milverton  paragraph">7455</td>
+<td class="gt_row gt_left" headers="The Adventure of Charles Augustus Milverton  text">"What I say is true," Holmes answered. "The money cannot be found. Surely it is better for you to take the substantial sum which I offer than to ruin this woman's career, which can profit you in no way?"</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right gt_striped" headers="The Adventure of Charles Augustus Milverton  paragraph">7456</td>
+<td class="gt_row gt_left gt_striped" headers="The Adventure of Charles Augustus Milverton  text">"There you make a mistake, Mr. Holmes. An exposure would profit me indirectly to a considerable extent. I have eight or ten similar cases maturing. If it was circulated among them that I had made a severe example of the Lady Eva I should find all of them much more open to reason. You see my point?"</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="The Adventure of Charles Augustus Milverton  paragraph">7457</td>
+<td class="gt_row gt_left" headers="The Adventure of Charles Augustus Milverton  text">Holmes sprang from his chair.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right gt_striped" headers="The Adventure of Charles Augustus Milverton  paragraph">7458</td>
+<td class="gt_row gt_left gt_striped" headers="The Adventure of Charles Augustus Milverton  text">"Get behind him, Watson! Don't let him out! Now, sir, let us see the contents of that note-book."</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="The Adventure of Charles Augustus Milverton  paragraph">7459</td>
+<td class="gt_row gt_left" headers="The Adventure of Charles Augustus Milverton  text">Milverton had glided as quick as a rat to the side of the room, and stood with his back against the wall.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right gt_striped" headers="The Adventure of Charles Augustus Milverton  paragraph">7460</td>
+<td class="gt_row gt_left gt_striped" headers="The Adventure of Charles Augustus Milverton  text">"Mr. Holmes, Mr. Holmes," he said, turning the front of his coat and exhibiting the butt of a large revolver, which projected from the inside pocket. "I have been expecting you to do something original. This has been done so often, and what good has ever come from it? I assure you that I am armed to the teeth, and I am perfectly prepared to use my weapons, knowing that the law will support me. Besides, your supposition that I would bring the letters here in a note-book is entirely mistaken. I would do nothing so foolish. And now, gentlemen, I have one or two little interviews this evening, and it is a long drive to Hampstead." He stepped forward, took up his coat, laid his hand on his revolver, and turned to the door. I picked up a chair, but Holmes shook his head and I laid it down again. With bow, a smile, and a twinkle Milverton was out of the room, and a few moments after we heard the slam of the carriage door and the rattle of the wheels as he drove away.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="The Adventure of Charles Augustus Milverton  paragraph">7461</td>
+<td class="gt_row gt_left" headers="The Adventure of Charles Augustus Milverton  text">Holmes sat motionless by the fire, his hands buried deep in his trouser pockets, his chin sunk upon his breast, his eyes fixed upon the glowing embers. For half an hour he was silent and still. Then, with the gesture of a man who has taken his decision, he sprang to his feet and passed into his bedroom. A little later a rakish young workman with a goatee beard and a swagger lit his clay pipe at the lamp before descending into the street. "I'll be back some time, Watson," said he, and vanished into the night. I understood that he had opened his campaign against Charles Augustus Milverton; but I little dreamed the strange shape which that campaign was destined to take.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right gt_striped" headers="The Adventure of Charles Augustus Milverton  paragraph">7462</td>
+<td class="gt_row gt_left gt_striped" headers="The Adventure of Charles Augustus Milverton  text">For some days Holmes came and went at all hours in this attire, but beyond a remark that his time was spent at Hampstead, and that it was not wasted, I knew nothing of what he was doing. At last, however, on a wild, tempestuous evening, when the wind screamed and rattled against the windows, he returned from his last expedition, and having removed his disguise he sat before the fire and laughed heartily in his silent inward fashion.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="The Adventure of Charles Augustus Milverton  paragraph">7463</td>
+<td class="gt_row gt_left" headers="The Adventure of Charles Augustus Milverton  text">"You would not call me a marrying man, Watson?"</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right gt_striped" headers="The Adventure of Charles Augustus Milverton  paragraph">7464</td>
+<td class="gt_row gt_left gt_striped" headers="The Adventure of Charles Augustus Milverton  text">"No, indeed!"</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="The Adventure of Charles Augustus Milverton  paragraph">7465</td>
+<td class="gt_row gt_left" headers="The Adventure of Charles Augustus Milverton  text">"You'll be interested to hear that I am engaged."</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><br> <br></p>
+</section>
+<section id="exclamation-points" class="level3">
+<h3 class="anchored" data-anchor-id="exclamation-points">Exclamation points</h3>
+<p>The analysis from Blatt that I’m interested in replicating is his exclamation point analysis.</p>
+<p>F. Scott Fitzgerald and Earnest Hemingway were known for their very resvered use of exclamation points. Fizgerald describes it as “Laughing at your own joke.” We can use this data to determine how well Arthur Conan Doyle follows this rule. <br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exclamation_points <span class="ot">&lt;-</span> paragraphs <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">exclamation_points =</span> <span class="fu">str_count</span>(text, <span class="st">"!"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>exclamation_point_sample <span class="ot">&lt;-</span> exclamation_points <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exclamation_points <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="do">### showing some example lines as a sanity check to make sure our code is working</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>exclamation_point_sample <span class="sc">|&gt;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Sample of Lines with Exclamation Points"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="necskbmhzz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#necskbmhzz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#necskbmhzz thead, #necskbmhzz tbody, #necskbmhzz tfoot, #necskbmhzz tr, #necskbmhzz td, #necskbmhzz th {
+  border-style: none;
+}
+
+#necskbmhzz p {
+  margin: 0;
+  padding: 0;
+}
+
+#necskbmhzz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#necskbmhzz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#necskbmhzz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#necskbmhzz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#necskbmhzz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#necskbmhzz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#necskbmhzz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#necskbmhzz .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#necskbmhzz .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#necskbmhzz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#necskbmhzz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#necskbmhzz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#necskbmhzz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#necskbmhzz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#necskbmhzz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#necskbmhzz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#necskbmhzz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#necskbmhzz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#necskbmhzz .gt_stub {
+  color: #333333;
+  background-color: #D5D5D5;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#necskbmhzz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#necskbmhzz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#necskbmhzz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#necskbmhzz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#necskbmhzz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#necskbmhzz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#necskbmhzz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#necskbmhzz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#necskbmhzz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#necskbmhzz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#necskbmhzz .gt_striped {
+  background-color: #F4F4F4;
+}
+
+#necskbmhzz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#necskbmhzz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#necskbmhzz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#necskbmhzz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#necskbmhzz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#necskbmhzz .gt_left {
+  text-align: left;
+}
+
+#necskbmhzz .gt_center {
+  text-align: center;
+}
+
+#necskbmhzz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#necskbmhzz .gt_font_normal {
+  font-weight: normal;
+}
+
+#necskbmhzz .gt_font_bold {
+  font-weight: bold;
+}
+
+#necskbmhzz .gt_font_italic {
+  font-style: italic;
+}
+
+#necskbmhzz .gt_super {
+  font-size: 65%;
+}
+
+#necskbmhzz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#necskbmhzz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#necskbmhzz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#necskbmhzz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#necskbmhzz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#necskbmhzz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#necskbmhzz .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Lines with Exclamation Points</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="book" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">book</th>
+<th id="paragraph" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">paragraph</th>
+<th id="text" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">text</th>
+<th id="exclamation_points" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">exclamation_points</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Noble Bachelor</td>
+<td class="gt_row gt_right" headers="paragraph">3585</td>
+<td class="gt_row gt_left" headers="text">"Without, however, the knowledge of pre-existing cases which serves me so well. There was a parallel instance in Aberdeen some years back, and something on very much the same lines at Munich the year after the Franco-Prussian War. It is one of these cases--but, hullo, here is Lestrade! Good-afternoon, Lestrade! You will find an extra tumbler upon the sideboard, and there are cigars in the box."</td>
+<td class="gt_row gt_right" headers="exclamation_points">2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">The Adventure of the Devil's Foot</td>
+<td class="gt_row gt_right gt_striped" headers="paragraph">13067</td>
+<td class="gt_row gt_left gt_striped" headers="text">"It won't do, Watson!" said he with a laugh. "Let us walk along the cliffs together and search for flint arrows. We are more likely to find them than clues to this problem. To let the brain work without sufficient material is like racing an engine. It racks itself to pieces. The sea air, sunshine, and patience, Watson--all else will come.</td>
+<td class="gt_row gt_right gt_striped" headers="exclamation_points">1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Six Napoleons</td>
+<td class="gt_row gt_right" headers="paragraph">7640</td>
+<td class="gt_row gt_left" headers="text">"Splendid!"</td>
+<td class="gt_row gt_right" headers="exclamation_points">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">The Man with the Twisted Lip</td>
+<td class="gt_row gt_right gt_striped" headers="paragraph">2582</td>
+<td class="gt_row gt_left gt_striped" headers="text">"Why," said my wife, pulling up her veil, "it is Kate Whitney. How you startled me, Kate! I had not an idea who you were when you came in."</td>
+<td class="gt_row gt_right gt_striped" headers="exclamation_points">1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Sign of the Four</td>
+<td class="gt_row gt_right" headers="paragraph">1026</td>
+<td class="gt_row gt_left" headers="text">"It means murder," said he, stooping over the dead man. "Ah, I expected it. Look here!" He pointed to what looked like a long, dark thorn stuck in the skin just above the ear.</td>
+<td class="gt_row gt_right" headers="exclamation_points">1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_summary <span class="ot">&lt;-</span> exclamation_points <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">exclamation_points =</span> <span class="fu">sum</span>(exclamation_points)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(books, <span class="at">by =</span> <span class="st">"book"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(publish_order)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">### actually counting exclamation points</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>exclamation_points_summary <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Exclamation Points per Book"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">book =</span> <span class="st">"Book"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">exclamation_points =</span> <span class="st">"Exclamation Points"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">publish_order =</span> <span class="st">"Publish Order"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> exclamation_points, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="iqkjsylxdr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:500px;">
+<style>#iqkjsylxdr table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#iqkjsylxdr thead, #iqkjsylxdr tbody, #iqkjsylxdr tfoot, #iqkjsylxdr tr, #iqkjsylxdr td, #iqkjsylxdr th {
+  border-style: none;
+}
+
+#iqkjsylxdr p {
+  margin: 0;
+  padding: 0;
+}
+
+#iqkjsylxdr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#iqkjsylxdr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#iqkjsylxdr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#iqkjsylxdr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#iqkjsylxdr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#iqkjsylxdr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#iqkjsylxdr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#iqkjsylxdr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#iqkjsylxdr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#iqkjsylxdr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#iqkjsylxdr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#iqkjsylxdr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#iqkjsylxdr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#iqkjsylxdr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#iqkjsylxdr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqkjsylxdr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#iqkjsylxdr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#iqkjsylxdr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#iqkjsylxdr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqkjsylxdr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#iqkjsylxdr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqkjsylxdr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#iqkjsylxdr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqkjsylxdr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iqkjsylxdr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iqkjsylxdr .gt_left {
+  text-align: left;
+}
+
+#iqkjsylxdr .gt_center {
+  text-align: center;
+}
+
+#iqkjsylxdr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#iqkjsylxdr .gt_font_normal {
+  font-weight: normal;
+}
+
+#iqkjsylxdr .gt_font_bold {
+  font-weight: bold;
+}
+
+#iqkjsylxdr .gt_font_italic {
+  font-style: italic;
+}
+
+#iqkjsylxdr .gt_super {
+  font-size: 65%;
+}
+
+#iqkjsylxdr .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#iqkjsylxdr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#iqkjsylxdr .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#iqkjsylxdr .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#iqkjsylxdr .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#iqkjsylxdr .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#iqkjsylxdr .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Exclamation Points per Book</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Book" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Book</th>
+<th id="Exclamation Points" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Exclamation Points</th>
+<th id="Publish Order" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Publish Order</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_right" headers="exclamation_points">85</td>
+<td class="gt_row gt_right" headers="publish_order">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Sign of the Four</td>
+<td class="gt_row gt_right" headers="exclamation_points">127</td>
+<td class="gt_row gt_right" headers="publish_order">2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Scandal in Bohemia</td>
+<td class="gt_row gt_right" headers="exclamation_points">33</td>
+<td class="gt_row gt_right" headers="publish_order">3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Red-Headed League</td>
+<td class="gt_row gt_right" headers="exclamation_points">16</td>
+<td class="gt_row gt_right" headers="publish_order">4</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">A Case of Identity</td>
+<td class="gt_row gt_right" headers="exclamation_points">13</td>
+<td class="gt_row gt_right" headers="publish_order">5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Boscombe Valley Mystery</td>
+<td class="gt_row gt_right" headers="exclamation_points">27</td>
+<td class="gt_row gt_right" headers="publish_order">6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Five Orange Pips</td>
+<td class="gt_row gt_right" headers="exclamation_points">17</td>
+<td class="gt_row gt_right" headers="publish_order">7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Man with the Twisted Lip</td>
+<td class="gt_row gt_right" headers="exclamation_points">32</td>
+<td class="gt_row gt_right" headers="publish_order">8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Blue Carbuncle</td>
+<td class="gt_row gt_right" headers="exclamation_points">40</td>
+<td class="gt_row gt_right" headers="publish_order">9</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Speckled Band</td>
+<td class="gt_row gt_right" headers="exclamation_points">34</td>
+<td class="gt_row gt_right" headers="publish_order">10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Engineer's Thumb</td>
+<td class="gt_row gt_right" headers="exclamation_points">31</td>
+<td class="gt_row gt_right" headers="publish_order">11</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Noble Bachelor</td>
+<td class="gt_row gt_right" headers="exclamation_points">19</td>
+<td class="gt_row gt_right" headers="publish_order">12</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Beryl Coronet</td>
+<td class="gt_row gt_right" headers="exclamation_points">43</td>
+<td class="gt_row gt_right" headers="publish_order">13</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Copper Beeches</td>
+<td class="gt_row gt_right" headers="exclamation_points">40</td>
+<td class="gt_row gt_right" headers="publish_order">14</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">Silver Blaze</td>
+<td class="gt_row gt_right" headers="exclamation_points">36</td>
+<td class="gt_row gt_right" headers="publish_order">15</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Yellow Face</td>
+<td class="gt_row gt_right" headers="exclamation_points">12</td>
+<td class="gt_row gt_right" headers="publish_order">16</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Stock-Broker's Clerk</td>
+<td class="gt_row gt_right" headers="exclamation_points">29</td>
+<td class="gt_row gt_right" headers="publish_order">17</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The "Gloria Scott"</td>
+<td class="gt_row gt_right" headers="exclamation_points">19</td>
+<td class="gt_row gt_right" headers="publish_order">18</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Musgrave Ritual</td>
+<td class="gt_row gt_right" headers="exclamation_points">7</td>
+<td class="gt_row gt_right" headers="publish_order">19</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Reigate Squires</td>
+<td class="gt_row gt_right" headers="exclamation_points">24</td>
+<td class="gt_row gt_right" headers="publish_order">20</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Crooked Man</td>
+<td class="gt_row gt_right" headers="exclamation_points">15</td>
+<td class="gt_row gt_right" headers="publish_order">21</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Resident Patient</td>
+<td class="gt_row gt_right" headers="exclamation_points">17</td>
+<td class="gt_row gt_right" headers="publish_order">22</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Greek Interpreter</td>
+<td class="gt_row gt_right" headers="exclamation_points">13</td>
+<td class="gt_row gt_right" headers="publish_order">23</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Naval Treaty</td>
+<td class="gt_row gt_right" headers="exclamation_points">34</td>
+<td class="gt_row gt_right" headers="publish_order">24</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Final Problem</td>
+<td class="gt_row gt_right" headers="exclamation_points">10</td>
+<td class="gt_row gt_right" headers="publish_order">25</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Empty House</td>
+<td class="gt_row gt_right" headers="exclamation_points">16</td>
+<td class="gt_row gt_right" headers="publish_order">26</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Norwood Builder</td>
+<td class="gt_row gt_right" headers="exclamation_points">24</td>
+<td class="gt_row gt_right" headers="publish_order">27</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Dancing Men</td>
+<td class="gt_row gt_right" headers="exclamation_points">17</td>
+<td class="gt_row gt_right" headers="publish_order">28</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Solitary Cyclist</td>
+<td class="gt_row gt_right" headers="exclamation_points">48</td>
+<td class="gt_row gt_right" headers="publish_order">29</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Priory School</td>
+<td class="gt_row gt_right" headers="exclamation_points">36</td>
+<td class="gt_row gt_right" headers="publish_order">30</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of Black Peter</td>
+<td class="gt_row gt_right" headers="exclamation_points">10</td>
+<td class="gt_row gt_right" headers="publish_order">31</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of Charles Augustus Milverton</td>
+<td class="gt_row gt_right" headers="exclamation_points">24</td>
+<td class="gt_row gt_right" headers="publish_order">32</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Six Napoleons</td>
+<td class="gt_row gt_right" headers="exclamation_points">17</td>
+<td class="gt_row gt_right" headers="publish_order">33</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Three Students</td>
+<td class="gt_row gt_right" headers="exclamation_points">23</td>
+<td class="gt_row gt_right" headers="publish_order">34</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Golden Pince-Nez</td>
+<td class="gt_row gt_right" headers="exclamation_points">36</td>
+<td class="gt_row gt_right" headers="publish_order">35</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Missing Three-Quarter</td>
+<td class="gt_row gt_right" headers="exclamation_points">34</td>
+<td class="gt_row gt_right" headers="publish_order">36</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Abbey Grange</td>
+<td class="gt_row gt_right" headers="exclamation_points">21</td>
+<td class="gt_row gt_right" headers="publish_order">37</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Second Stain</td>
+<td class="gt_row gt_right" headers="exclamation_points">49</td>
+<td class="gt_row gt_right" headers="publish_order">38</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Hound of the Baskervilles</td>
+<td class="gt_row gt_right" headers="exclamation_points">182</td>
+<td class="gt_row gt_right" headers="publish_order">39</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Valley Of Fear</td>
+<td class="gt_row gt_right" headers="exclamation_points">319</td>
+<td class="gt_row gt_right" headers="publish_order">40</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of Wisteria Lodge</td>
+<td class="gt_row gt_right" headers="exclamation_points">12</td>
+<td class="gt_row gt_right" headers="publish_order">41</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Cardboard Box</td>
+<td class="gt_row gt_right" headers="exclamation_points">20</td>
+<td class="gt_row gt_right" headers="publish_order">42</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Red Circle</td>
+<td class="gt_row gt_right" headers="exclamation_points">46</td>
+<td class="gt_row gt_right" headers="publish_order">43</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Adventure of the Bruce-Partington Plans</td>
+<td class="gt_row gt_right" headers="exclamation_points">43</td>
+<td class="gt_row gt_right" headers="publish_order">44</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Dying Detective</td>
+<td class="gt_row gt_right" headers="exclamation_points">45</td>
+<td class="gt_row gt_right" headers="publish_order">45</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">The Disappearance of Lady Frances Carfax</td>
+<td class="gt_row gt_right" headers="exclamation_points">40</td>
+<td class="gt_row gt_right" headers="publish_order">46</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Devil's Foot</td>
+<td class="gt_row gt_right" headers="exclamation_points">18</td>
+<td class="gt_row gt_right" headers="publish_order">47</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="book">His Last Bow</td>
+<td class="gt_row gt_right" headers="exclamation_points">23</td>
+<td class="gt_row gt_right" headers="publish_order">48</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><br> <br> Noteably the 4 highest counts are full novels, while the rest are short stories. It makes sense that they are higher, but they will skew the rest of the analysis.</p>
+<p>In graphical form: <br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>novels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A Study In Scarlet"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The Sign of the Four"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The Hound of the Baskervilles"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"The Valley Of Fear"</span> )</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>exclamation_points_summary <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(book <span class="sc">%in%</span> novels)) <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> publish_order, <span class="at">y =</span> exclamation_points)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Publish Order"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Exclamation Points"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Exclamation Points per Book"</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br> <br> Graphically, it does not look like Doyle’s use of exclamation points changed over time. We can verify this mathematically. <br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_summary <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(book <span class="sc">%in%</span> novels)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(exclamation_points <span class="sc">~</span> publish_order, <span class="at">data =</span> _) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = exclamation_points ~ publish_order, data = filter(exclamation_points_summary, 
+    !(book %in% novels)))
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-18.637 -10.027  -3.060   9.545  21.007 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    23.0608     3.8057   6.060 3.26e-07 ***
+publish_order   0.1356     0.1351   1.003    0.321    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 11.86 on 42 degrees of freedom
+Multiple R-squared:  0.02341,   Adjusted R-squared:  0.0001549 
+F-statistic: 1.007 on 1 and 42 DF,  p-value: 0.3214</code></pre>
+</div>
+</div>
+<p><br> <br></p>
+<p>Sometimes there’s not anything particularly exciting with a type of analysis; sometimes just seeing that he remains consistent throughout is career as an awesome insight in itself.</p>
+</section>
+<section id="edit-2025-11-24" class="level3">
+<h3 class="anchored" data-anchor-id="edit-2025-11-24">Edit 2025-11-24</h3>
+<p>I received an excellent suggestion around normalization: <br></p>
+<blockquote class="bluesky-embed blockquote" data-bluesky-uri="at://did:plc:777eanw7giyjd76dwatpch3d/app.bsky.feed.post/3m6ffv3zjsc24" data-bluesky-cid="bafyreigbi7aq7jcevml26qhusk5wwnnfc6nredwekdtnc3uevhvulotriq" data-bluesky-embed-color-mode="system">
+<p lang="en">
+Excellent!! It would be cool to see exclamation marks divided by word count! Since longer works will have more by nature! How many exclamation marks can I get in this post?! 😂
+</p>
+— Libby Heeren (<a href="https://bsky.app/profile/did:plc:777eanw7giyjd76dwatpch3d?ref_src=embed"><span class="citation" data-cites="libbyheeren.bsky.social">@libbyheeren.bsky.social</span></a>) <a href="https://bsky.app/profile/did:plc:777eanw7giyjd76dwatpch3d/post/3m6ffv3zjsc24?ref_src=embed">November 24, 2025 at 10:02 AM</a>
+</blockquote>
+<script async="" src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+<p><br></p>
+<p>Indeed, just because I only included the short stories in the previous visualisation does not mean that all of Doyle’s short stories are same length, and therefore, the absolute count comparision might not necessarily be fair. That said, there is one more method for normalization that is also worth considering. Hemingway would argue that most exclamation points should be replaced with periods. In addition to the above suggestion, I will also normalize by the dividing the sum of terminal periods and exclamation points. This one is a bit more tricky. I don’t want to count “Dr.” or “1.” as sentences. To correct for this, I will count periods immediately after a word that has at least one lowercase vowel.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_normalization <span class="ot">&lt;-</span> paragraphs <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">exclamation_points =</span> <span class="fu">str_count</span>(text, <span class="st">"!"</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">words =</span> <span class="fu">lengths</span>(<span class="fu">str_split</span>(text, <span class="st">" "</span>)),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">terminal_periods =</span> <span class="fu">str_count</span>(text, <span class="st">"</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">w*[aeiou]</span><span class="sc">\\</span><span class="st">w*</span><span class="sc">\\</span><span class="st">."</span>) <span class="co">#thanks chatGPT</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sample <span class="ot">&lt;-</span> exclamation_points_normalization <span class="sc">|&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exclamation_points <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(terminal_periods <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">5</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>sample <span class="sc">|&gt;</span> <span class="co">#Trust but verify</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Sample of Punctuation and Word Counts"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"300px"</span>, <span class="at">container.overflow.y =</span> <span class="st">"scroll"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="rukqansbfw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:scroll;width:auto;height:300px;">
+<style>#rukqansbfw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rukqansbfw thead, #rukqansbfw tbody, #rukqansbfw tfoot, #rukqansbfw tr, #rukqansbfw td, #rukqansbfw th {
+  border-style: none;
+}
+
+#rukqansbfw p {
+  margin: 0;
+  padding: 0;
+}
+
+#rukqansbfw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rukqansbfw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rukqansbfw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rukqansbfw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rukqansbfw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rukqansbfw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rukqansbfw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rukqansbfw .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rukqansbfw .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rukqansbfw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rukqansbfw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rukqansbfw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rukqansbfw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rukqansbfw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rukqansbfw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#rukqansbfw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rukqansbfw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rukqansbfw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rukqansbfw .gt_stub {
+  color: #333333;
+  background-color: #D5D5D5;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rukqansbfw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rukqansbfw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rukqansbfw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rukqansbfw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rukqansbfw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#rukqansbfw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rukqansbfw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rukqansbfw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rukqansbfw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#rukqansbfw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rukqansbfw .gt_striped {
+  background-color: #F4F4F4;
+}
+
+#rukqansbfw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#rukqansbfw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rukqansbfw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rukqansbfw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rukqansbfw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rukqansbfw .gt_left {
+  text-align: left;
+}
+
+#rukqansbfw .gt_center {
+  text-align: center;
+}
+
+#rukqansbfw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rukqansbfw .gt_font_normal {
+  font-weight: normal;
+}
+
+#rukqansbfw .gt_font_bold {
+  font-weight: bold;
+}
+
+#rukqansbfw .gt_font_italic {
+  font-style: italic;
+}
+
+#rukqansbfw .gt_super {
+  font-size: 65%;
+}
+
+#rukqansbfw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rukqansbfw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rukqansbfw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rukqansbfw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rukqansbfw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rukqansbfw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rukqansbfw .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample of Punctuation and Word Counts</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="book" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">book</th>
+<th id="paragraph" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">paragraph</th>
+<th id="text" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">text</th>
+<th id="exclamation_points" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">exclamation_points</th>
+<th id="words" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">words</th>
+<th id="terminal_periods" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">terminal_periods</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Adventure of the Solitary Cyclist</td>
+<td class="gt_row gt_right" headers="paragraph">6820</td>
+<td class="gt_row gt_left" headers="text">"Enough of this," said my friend, coldly. "Drop that pistol! Watson, pick it up! Hold it to his head! Thank you. You, Carruthers, give me that revolver. We'll have no more violence. Come, hand it over!"</td>
+<td class="gt_row gt_right" headers="exclamation_points">4</td>
+<td class="gt_row gt_right" headers="words">36</td>
+<td class="gt_row gt_right" headers="terminal_periods">4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">The Adventure of the Golden Pince-Nez</td>
+<td class="gt_row gt_right gt_striped" headers="paragraph">8009</td>
+<td class="gt_row gt_left gt_striped" headers="text">"Tobacco and my work, but now only tobacco," the old man exclaimed. "Alas! what a fatal interruption! Who could have foreseen such a terrible catastrophe? So estimable a young man! I assure you that after a few months' training he was an admirable assistant. What do you think of the matter, Mr. Holmes?"</td>
+<td class="gt_row gt_right gt_striped" headers="exclamation_points">3</td>
+<td class="gt_row gt_right gt_striped" headers="words">53</td>
+<td class="gt_row gt_right gt_striped" headers="terminal_periods">2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Hound of the Baskervilles</td>
+<td class="gt_row gt_right" headers="paragraph">8905</td>
+<td class="gt_row gt_left" headers="text">"Excellent! This is a colleague, Watson, after our own heart. But the marks?"</td>
+<td class="gt_row gt_right" headers="exclamation_points">1</td>
+<td class="gt_row gt_right" headers="words">13</td>
+<td class="gt_row gt_right" headers="terminal_periods">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="book">A Study In Scarlet</td>
+<td class="gt_row gt_right gt_striped" headers="paragraph">50</td>
+<td class="gt_row gt_left gt_striped" headers="text">"Indeed!" I murmured.</td>
+<td class="gt_row gt_right gt_striped" headers="exclamation_points">1</td>
+<td class="gt_row gt_right gt_striped" headers="words">3</td>
+<td class="gt_row gt_right gt_striped" headers="terminal_periods">1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="book">The Hound of the Baskervilles</td>
+<td class="gt_row gt_right" headers="paragraph">10056</td>
+<td class="gt_row gt_left" headers="text">"To see Sir Henry. Ah, here he is!"</td>
+<td class="gt_row gt_right" headers="exclamation_points">1</td>
+<td class="gt_row gt_right" headers="words">8</td>
+<td class="gt_row gt_right" headers="terminal_periods">1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_normalization_summary <span class="ot">&lt;-</span> exclamation_points_normalization <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(book) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">exclamation_points =</span> <span class="fu">sum</span>(exclamation_points),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">terminal_periods =</span> <span class="fu">sum</span>(terminal_periods),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">words =</span> <span class="fu">sum</span>(words),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">exclamation_point_per_word =</span> exclamation_points <span class="sc">/</span> words,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">exclamation_point_per_sentence_ending =</span> exclamation_points <span class="sc">/</span> (terminal_periods <span class="sc">+</span> exclamation_points)) <span class="sc">|&gt;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(books, <span class="at">by =</span> <span class="st">"book"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>metrics <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Metric =</span> <span class="fu">c</span>(<span class="st">"Most Exclamations"</span>, <span class="st">"Least Exclamations"</span>, <span class="st">"Most Exclamations per Word"</span>, <span class="st">"Least Exclamations per Word"</span>, <span class="st">"Most Exclamations per Sentence Ending"</span>, <span class="st">"Least Exclamations per Sentence Ending"</span>),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">book =</span> <span class="fu">c</span>(</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    exclamation_points_normalization_summary<span class="sc">$</span>book[<span class="fu">which.max</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_points)],</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    exclamation_points_normalization_summary<span class="sc">$</span>book[<span class="fu">which.min</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_points)],</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    exclamation_points_normalization_summary<span class="sc">$</span>book[<span class="fu">which.max</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_word)],</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    exclamation_points_normalization_summary<span class="sc">$</span>book[<span class="fu">which.min</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_word)],</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    exclamation_points_normalization_summary<span class="sc">$</span>book[<span class="fu">which.max</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_sentence_ending)],</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    exclamation_points_normalization_summary<span class="sc">$</span>book[<span class="fu">which.min</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_sentence_ending)]</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">Value =</span> <span class="fu">c</span>(</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">max</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_points),</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">min</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_points),</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">max</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_word),</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">min</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_word),</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">max</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_sentence_ending),</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">min</span>(exclamation_points_normalization_summary<span class="sc">$</span>exclamation_point_per_sentence_ending)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>metrics <span class="sc">|&gt;</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">book =</span> <span class="st">"Book"</span>,</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">Value =</span> <span class="st">"Value"</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> Value, <span class="at">decimals =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Exclamation Point Usage Summary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="bjfqnykdas" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bjfqnykdas table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bjfqnykdas thead, #bjfqnykdas tbody, #bjfqnykdas tfoot, #bjfqnykdas tr, #bjfqnykdas td, #bjfqnykdas th {
+  border-style: none;
+}
+
+#bjfqnykdas p {
+  margin: 0;
+  padding: 0;
+}
+
+#bjfqnykdas .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bjfqnykdas .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bjfqnykdas .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bjfqnykdas .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bjfqnykdas .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bjfqnykdas .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bjfqnykdas .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bjfqnykdas .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bjfqnykdas .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bjfqnykdas .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bjfqnykdas .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bjfqnykdas .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bjfqnykdas .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bjfqnykdas .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bjfqnykdas .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjfqnykdas .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bjfqnykdas .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bjfqnykdas .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bjfqnykdas .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjfqnykdas .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bjfqnykdas .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjfqnykdas .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bjfqnykdas .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjfqnykdas .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bjfqnykdas .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjfqnykdas .gt_left {
+  text-align: left;
+}
+
+#bjfqnykdas .gt_center {
+  text-align: center;
+}
+
+#bjfqnykdas .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bjfqnykdas .gt_font_normal {
+  font-weight: normal;
+}
+
+#bjfqnykdas .gt_font_bold {
+  font-weight: bold;
+}
+
+#bjfqnykdas .gt_font_italic {
+  font-style: italic;
+}
+
+#bjfqnykdas .gt_super {
+  font-size: 65%;
+}
+
+#bjfqnykdas .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bjfqnykdas .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bjfqnykdas .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bjfqnykdas .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bjfqnykdas .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bjfqnykdas .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bjfqnykdas .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Exclamation Point Usage Summary</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Metric" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Metric</th>
+<th id="Book" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Book</th>
+<th id="Value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Metric">Most Exclamations</td>
+<td class="gt_row gt_left" headers="book">The Valley Of Fear</td>
+<td class="gt_row gt_right" headers="Value">319.0000</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Metric">Least Exclamations</td>
+<td class="gt_row gt_left" headers="book">The Musgrave Ritual</td>
+<td class="gt_row gt_right" headers="Value">7.0000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Metric">Most Exclamations per Word</td>
+<td class="gt_row gt_left" headers="book">The Adventure of the Dying Detective</td>
+<td class="gt_row gt_right" headers="Value">0.0078</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Metric">Least Exclamations per Word</td>
+<td class="gt_row gt_left" headers="book">The Musgrave Ritual</td>
+<td class="gt_row gt_right" headers="Value">0.0009</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Metric">Most Exclamations per Sentence Ending</td>
+<td class="gt_row gt_left" headers="book">The Adventure of the Solitary Cyclist</td>
+<td class="gt_row gt_right" headers="Value">0.1004</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Metric">Least Exclamations per Sentence Ending</td>
+<td class="gt_row gt_left" headers="book">The Adventure of Wisteria Lodge</td>
+<td class="gt_row gt_right" headers="Value">0.0172</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>exclamation_points_normalization_summary_for_plot <span class="ot">&lt;-</span> exclamation_points_normalization_summary <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(exclamation_point_per_word, exclamation_point_per_sentence_ending)) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">recode</span>(name,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"exclamation_point_per_word"</span> <span class="ot">=</span> <span class="st">"Per Word"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"exclamation_point_per_sentence_ending"</span> <span class="ot">=</span> <span class="st">"Per Sentence Ending"</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>exclamation_normalization_plot <span class="ot">&lt;-</span> exclamation_points_normalization_summary_for_plot <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> publish_order, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>name, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Publish Order"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Normalized Exclamation Point Usage"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>exclamation_normalization_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
