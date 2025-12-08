@@ -6,6 +6,8 @@ echo: true
 
 Thanksgiving is one of my favorite holidays. After reading the impassioned arguments of [Brunch is Hell: How to save the world by throwing a dinner party](https://www.brunchishell.com/brunch-is-hell),  For about the past 10 years, I've been hosting a friendsgiving and cooking mostly everything on my own (the past couple years I've had some help and a good opportunity to practice delegation). It's challenging, especially the last couple hours when several different things are in the oven and on the stove at the same time. The most important thing is to make a plan that you can refer to amidst the chaos. 
 
+![2025 Spread](spread.jpg)
+
 One of my favorite organization tools is [`mermaid.js`](https://mermaid.js.org). It allows you to create various diagrams such as flow charts and gantt charts using code. This makes it really easy to edit because you can focus on the content and not have to worry about spacing, making sure arrows are straight, or selecting groups of objects to move down in order to make room for something in the middle. It also means that you can describe your process to ChatGPT or other AI tool of choice and it'll give you a pretty good start that you can just copy and paste into a markdown document.
 
 To demonstrate both the power of mermaid.js and how you can prepare a potluck-less Friendsgiving, I've diagrammed my process below and also included some reference recipes for the various dishes.
