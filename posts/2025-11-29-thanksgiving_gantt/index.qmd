@@ -2,6 +2,7 @@
 title: "Thanksgiving, but make it Gantt"
 date: "2025-11-29"
 echo: true
+categories: ["cooking", "mermaid", "fun"]
 ---
 
 Thanksgiving is one of my favorite holidays. After reading the impassioned arguments of [Brunch is Hell: How to save the world by throwing a dinner party](https://www.brunchishell.com/brunch-is-hell),  For about the past 10 years, I've been hosting a friendsgiving and cooking mostly everything on my own (the past couple years I've had some help and a good opportunity to practice delegation). It's challenging, especially the last couple hours when several different things are in the oven and on the stove at the same time. The most important thing is to make a plan that you can refer to amidst the chaos. 
