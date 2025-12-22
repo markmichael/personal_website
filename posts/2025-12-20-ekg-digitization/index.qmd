@@ -1,0 +1,289 @@
+---
+title: "EKG Digitization"
+date: "2025-12-20"
+categories: ["health", "data processing", "rstats"]
+execute:
+    warning: FALSE
+references:
+  - id: physionet-ecg-image-digitization
+    type: webpage
+    title: "PhysioNet: Digitization of ECG Images"
+    author:
+      - family: Reyna
+        given: Matthew A.
+      - given: Deepanshi
+      - family: Weigle
+        given: James
+      - family: Koscova
+        given: Zuzana
+      - family: Campbell
+        given: Kiersten
+      - family: Seyedi
+        given: Salman
+      - family: Elola
+        given: Andoni
+      - family: Bahrami Rad
+        given: Ali
+      - family: Shah
+        given: Amit J.
+      - family: Bhatia
+        given: Neal K.
+      - family: Yan
+        given: Yao
+      - family: Dane
+        given: Sohier
+      - family: Howard
+        given: Addison
+      - family: Clifford
+        given: Gari D.
+      - family: Sameni
+        given: Reza
+    issued:
+      - year: 2025
+    URL: https://kaggle.com/competitions/physionet-ecg-image-digitization
+    publisher: Kaggle
+  - id: ecg-paper-wikimedia
+    type: graphic
+    title: "ECG Paper"
+    author:
+      - family: Kuhn
+        given: Markus
+      - family: Stannered
+      - family: MoodyGroove
+    issued:
+      - year: 2007
+    source: Wikimedia Commons
+    URL: https://commons.wikimedia.org/wiki/File:ECG_Paper.jpg
+    rights: Public Domain
+    note: >
+      Original PowerPoint JPEG by User:MoodyGroove. Trace modified by User:Stannered.
+      Attribution consolidated from Wikimedia Commons file history.
+---
+
+
+
+I occasionally peruse available Kaggle competitions to see if there's something fun to explore. This week, I came across [this competition](https://kaggle.com/competitions/physionet-ecg-image-digitization) around converting EKG images into time series data. This piqued my interest because context can give such a big advantage over a pure ML approach. I'm going to walk through some basics of EKGs and hopefully we can extract some time series data without using any ML. That said, there is obviously a place for computer vision to do a lot of the work that I'm going to write more deterministic code for. 
+
+
+![The sample EKG we will analyze](sample_ekg.png){#fig-sample fig-align=center width=75%}  
+@physionet-ecg-image-digitization
+
+### Red squares
+
+Before even looking at the actual signal, I'm interested in the red lines. Here's a good explanation from Wikipedia. We can use the red line to build our coordinate system and from there, identify time and voltage values for the actual ekg signal.
+
+![A sample grid](ekg_grid.svg)  
+@ecg-paper-wikimedia
+
+First, let's pull out the red channel.
+
+```{r setup, echo=FALSE}
+library(magick)
+library(dplyr)
+library(ggplot2)
+library(purrr)
+library(png)
+
+img <- image_read("sample_ekg.png")
+
+# separate channels
+red <- image_channel(img, "red")
+blue <- image_channel(img, "blue")
+green <- image_channel(img, "green")
+
+image_write(red, "red_channel.png")
+image_write(blue, "blue_channel.png")
+image_write(green, "green_channel.png")
+```
+
+![Red channel of ECG grid](red_channel.png){#fig-red width=60% fig-align=center}
+
+I was surprised to see that we pretty much eliminated the grid here. This is still helpful though. Lets find a line with no EKG signal and no writing.
+
+```{r}
+
+## convert to a matrix
+
+red_matrix <- as.integer(image_data(red))
+
+## find the number of pixels in each row with >200 value
+
+high_value_rows <- red_matrix[,,1] |>
+  apply(1, function(x) sum(x > 200))
+high_value_rows <- tibble(count = high_value_rows) |>
+  mutate(row = max(row_number()) - row_number() + 1)
+
+empty_row_graph <- ggplot(high_value_rows, aes(x = row, y = count)) +
+  coord_flip() +
+  annotation_raster(red, xmin = 0, xmax = 1700, ymin = 0, ymax = 2200) +
+  geom_line(color = "red") +
+  geom_vline(aes(xintercept = 1298), color = "blue")
+    
+empty_row_graph
+
+
+
+
+
+```
+
+From the plot overlay, we can now see where there is writing and signal and where there is nothing but grid. Let's now find a horizontal line without signal. I added a blue line that I'll use to measure my grid. I'll use the blue channel for this one.
+
+![Blue channel of ECG grid](blue_channel.png){#fig-blue width=60% fig-align=center}
+
+
+```{r}
+
+blue_matrix <- as.integer(image_data(blue))
+
+
+horizontal_lines <- blue_matrix[502, , 1]
+## create a 3 column tibble with one column being the row number, the second column number, and the third column the value
+horizontal_lines <- tibble(
+  column = seq(1, 2200),
+  row = 502,
+  value = horizontal_lines)
+grid_plot <- ggplot(horizontal_lines, aes(x = column, y = value)) +
+  geom_line()
+
+grid_plot
+
+
+```
+
+let's zoom in and add the blue channel underneath.
+
+```{r}
+
+crop_blue <- image_crop(blue, "300x95+1200+450")
+
+zoomed_in <- grid_plot +
+  lims(x = c(1200, 1500), y = c(0, 350)) +
+  annotation_raster(crop_blue, xmin = 1200, xmax = 1500, ymin = 255, ymax = 350)
+
+zoomed_in
+
+```
+
+Everything lines up perfectly. We can take the indeces of our minima and calculate a time per pixel for our x-axis and a mV per pixel for our y-axis.
+
+```{r}
+
+horizontal_lines_minima <- horizontal_lines |>
+  filter(!(column %in% c(1, 2200))) |>
+  filter(value < 20) |>
+  mutate(next_minima = lead(column)) |>
+  filter(!is.na(next_minima)) |>
+  mutate(diff = next_minima - column)
+
+big_box_width <- mean(horizontal_lines_minima$diff)
+
+
+
+```
+
+
+The width of one big box is `r big_box_width |> round(1)` pixels, which is equal to 200ms horizontally and 0.5mV vertically. Now let's start tracing the signal itself.  
+
+### Finding the signals
+
+For this, we're going to go back to the red channel. We'll use our previous analysis that we used to find rows that have no signal, and instead use it to find the rows that have our signals. There are 4 rows of signals. The first three have all 12 leads, and the bottom row is lead II going all the way across to be used for rate and rhythm.
+
+```{r}
+
+bands_of_signal <- high_value_rows |>
+  filter(count < max(count)) |>
+  mutate(next_row = lead(row)) |>
+  filter(!is.na(next_row)) |>
+  mutate(band = row - next_row == 1) |>
+  group_by(temp = cumsum(!lag(band, default = TRUE))) |>
+  mutate(band = cur_group_id()) |>
+  ungroup() |>
+  select(-temp) |>
+  group_by(band) |>
+  summarize(
+    start = min(row),
+    end = max(row),
+    zero_volatage = row[which.min(count)])
+
+
+bands_of_signal_graph <- ggplot(bands_of_signal |> filter(band >= 5 & band <= 8) |> mutate(band = as.factor(band)), aes(labels = band, xmin = start, xmax = end, ymin = 0, ymax = 2200)) +
+    annotation_raster(red, xmin = 0, xmax = 1700, ymin = 0, ymax = 2200) +
+    geom_rect(aes(fill = band), alpha = 0.5) +
+    geom_vline(aes(xintercept = zero_volatage), color = "red") +
+    coord_flip() +
+    ylim(c(0, 2200)) +
+    xlim(c(0, 1700))
+
+
+
+bands_of_signal_graph
+
+
+```
+
+Now we've found the parts of the image that have signal and we also identified the zero voltage line. Technically, zero voltage is defined as the voltage between the T wave and the following P wave, but this approximation of counting dark pixels in each row and identifying a local maximum seems to work incredibly well. You'll notice that the bands are labeled 5-8 because I started at the top and each section of text or signal created a band. This will not always be consistent. In lead II, you can see that the label is a new band, but in the other rows, the label is included in the band. Depending on the patient, the device, and the strength of the lead connection, the amplitude of the signal can vary and overlap with the label (sometimes even overlap with the signal above or below).
+
+### Tracing the signal
+
+Let's see if we can trace the signal on the red channel. The naive approach is to find the location of the min value in each column, and when there is more than one, take the highest location. I'll also block out where the letters are so we can avoid those.
+
+```{r}
+
+leads <- lapply(seq(5,8), function(x) {
+band <- red_matrix[(1700 - bands_of_signal$end[x]):(1700 - bands_of_signal$start[x]),,1]
+if(x != 8) {
+  band[length(band[,1]):(length(band[,1])-42), 100:150] <- 255
+  band[length(band[,1]):(length(band[,1])-42), 600:675] <- 255
+  band[length(band[,1]):(length(band[,1])-42), 1090:1150] <- 255
+  band[length(band[,1]):(length(band[,1])-42), 1590:1650] <- 255
+}
+band_tibble <- tibble(
+  column = seq(1, 2200)) |>
+mutate(row = map_int(column, function(y) bands_of_signal$end[x] - min(which(band[,y] == min(band[,y]))))) |>
+mutate(band = x)
+    }) |>
+    bind_rows()
+
+
+bands_graph <- ggplot(leads, aes(x = column, y = row, color = as.factor(band))) +
+  annotation_raster(red, xmin = 0, xmax = 2200, ymin = 0, ymax = 1700) +
+  geom_line() +
+  xlim(c(0, 2200)) +
+  ylim(c(0, 1700)) +
+  scale_color_discrete(name = "Band")
+
+
+bands_graph
+
+
+```
+
+### Converting to time series
+
+Now that we have our signal traced, converting it to a time series is easy. We just need to subtract the zero voltage and convert the x and y coordinates into ms and mV, respectively.
+
+```{r}
+
+leads_time_series <- leads |>
+  left_join(bands_of_signal, by = "band") |>
+  mutate(
+    mV = (row - zero_volatage)/big_box_width * 0.5,
+    ms = column/big_box_width * 200)
+
+
+  lead_time_series_plot <- ggplot(leads_time_series, aes(x = ms, y = mV)) +
+    geom_line() +
+    facet_grid(rows = vars(band))
+
+  lead_time_series_plot
+
+
+
+```
+
+Now our EKG is 10 seconds long. We could probably take it further by breaking it down into each individual lead and trimming the false signal along the edges, but I think we've demonstrated how we can get this done with image processing and some basic knowledge about EKGs.
+
+That said, there is definitely opportunity to improve this process with machine learning. We used a pretty standard PNG. The competition also includes paper scans, pictures taken with cell phones, black and white scans, etc. A robust process would be to use machine learning to get the EKG oriented correctly, colorize it into something consistent, and mark regions where the signal is and isn't (e.g. making sure the aVR label doesn't get interpreted as signal). 
+
+
