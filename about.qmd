@@ -15,7 +15,7 @@ about:
 
 ---
 
-Hi, I'm Mark. I'm a Seattle-baed product manager with a background in medicine. I have opinions about healthcare, technology, cycling, and other things. <br> <br>
+Hi, I'm Mark. I'm a Seattle-based product manager with a background in medicine. I have opinions about healthcare, technology, cycling, and other things. <br> <br>
 Most recently, I've been building [Harvvest](https://harvvest.app), a platform that helps influencers monetize their content by connecting them with brands for them to promote. <br> <br>
 
 MD - Baylor College of Medicine <br>
