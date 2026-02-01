@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-02-03">
 
-<title>mark michael</title>
+<title>TidyTuesday 2026-02-03 Edible Plants – mark michael</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +21,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c8e7dacb3e1cda0cdb1957ae6c022dec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c8e7dacb3e1cda0cdb1957ae6c022dec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,35 +104,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XV04WJ9C9C"></script>
 
 <script type="text/javascript">
@@ -109,47 +114,18 @@ gtag('js', new Date());
 gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">mark michael</span>
     </a>
   </div>
@@ -160,7 +136,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -187,195 +163,157 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">mark michael</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">TidyTuesday 2026-02-03 Edible Plants</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">data science</div>
+                <div class="quarto-category">tidytuesday</div>
+                <div class="quarto-category">rstats</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 3, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Y29va2luZw==">cooking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YSUyMHByb2Nlc3Npbmc=">data processing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YSUyMHNjaWVuY2U=">data science <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGV2ZWxvcG1lbnQ=">development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnVu">fun <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGFydnZlc3Q=">harvvest <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGVhbHRo">health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWVybWFpZA==">mermaid <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cnN0YXRz">rstats <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dGlkeXR1ZXNkYXk=">tidytuesday <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGF0YSUyMHNjaWVuY2UlMkN0aWR5dHVlc2RheSUyQ3JzdGF0cw==" data-listing-date-sort="1770105600000" data-listing-file-modified-sort="1769913595212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="479">
-<div class="thumbnail"><a href="./posts/2026-02-03-edible-plants/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2026-02-03-edible-plants/index_files/figure-html/basic_analysis-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-02-03-edible-plants/index.html" class="no-external">TidyTuesday 2026-02-03 Edible Plants</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHNjaWVuY2U='); return false;">data science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dGlkeXR1ZXNkYXk='); return false;">tidytuesday</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cnN0YXRz'); return false;">rstats</div>
-
+<p>TidyTuesday is a weekly data visualization challenge. The details for this week can be found <a href="https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-02-03">here</a>.</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>This week we’re looking at edible plants. I’m interested in understanding the relationship between sun and water requirements and the caloric content of the plant. Generally I would expect that if a plant needs more energy from the sun, it’s because it is storing more sugars in it’s fruit.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="delink listing-description"><a href="./posts/2026-02-03-edible-plants/index.html" class="no-external">
-TidyTuesday is a weekly data visualization challenge. The details for this week can be found here.
-</a></div>
+<p>I use the tidytuesdayR package to load the data the first time. Then I store it locally in a csv.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>edible_plants <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">"2026-02-03"</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(edible_plants, <span class="st">"edible_plants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="metadata">
-<a href="./posts/2026-02-03-edible-plants/index.html" class="no-external">
-<div class="listing-date">
-Feb 3, 2026
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>edible_plants <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"edible_plants.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sunlight =</span> <span class="fu">tolower</span>(sunlight) <span class="sc">|&gt;</span> <span class="fu">str_replace_all</span>(<span class="st">"/ "</span>, <span class="st">"/"</span>) <span class="sc">|&gt;</span> <span class="fu">factor</span>())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>edible_plants<span class="sc">$</span>water <span class="ot">&lt;-</span> <span class="fu">factor</span>(edible_plants<span class="sc">$</span>water, <span class="at">levels=</span> <span class="fu">c</span>(<span class="st">"Very Low"</span>, <span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>, <span class="st">"Very High"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="aGVhbHRoJTJDZGF0YSUyMHByb2Nlc3NpbmclMkNyc3RhdHM=" data-listing-date-sort="1766217600000" data-listing-file-modified-sort="1766376186290" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1259">
-<div class="thumbnail"><a href="./posts/2025-12-20-ekg-digitization/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2025-12-20-ekg-digitization/sample_ekg.png" alt="The sample EKG we will analyze"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-12-20-ekg-digitization/index.html" class="no-external">EKG Digitization</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGVhbHRo'); return false;">health</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHByb2Nlc3Npbmc='); return false;">data processing</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cnN0YXRz'); return false;">rstats</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-12-20-ekg-digitization/index.html" class="no-external">
-I occasionally peruse available Kaggle competitions to see if there’s something fun to explore. This week, I came across this competition around converting EKG images into…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-12-20-ekg-digitization/index.html" class="no-external">
-<div class="listing-date">
-Dec 20, 2025
-</div>
-</a>
+</section>
+<section id="exploring-columns-of-interest" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-columns-of-interest">Exploring columns of interest</h3>
+<p>Let’s look at the values in the sunlight, water, and energy columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>edible_plants <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sunlight, water, energy, nutrients) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 140
+Columns: 4
+$ sunlight  &lt;fct&gt; full sun, full sun, full sun, full sun/partial shade/full sh…
+$ water     &lt;fct&gt; Very High, Medium, Medium, Very Low, High, Medium, Medium, M…
+$ energy    &lt;dbl&gt; 80, 27, 27, 88, 25, 34, 35, 31, 50, NA, NA, NA, NA, NA, NA, …
+$ nutrients &lt;chr&gt; "Medium", "Medium", "Medium", "Medium", "High", "High", "Hig…</code></pre>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Y29va2luZyUyQ21lcm1haWQlMkNmdW4=" data-listing-date-sort="1764403200000" data-listing-file-modified-sort="1766251749339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="850">
-<div class="thumbnail"><a href="./posts/2025-11-29-thanksgiving_gantt/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2025-11-29-thanksgiving_gantt/spread.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-11-29-thanksgiving_gantt/index.html" class="no-external">Thanksgiving, but make it Gantt</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29va2luZw=='); return false;">cooking</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWVybWFpZA=='); return false;">mermaid</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZnVu'); return false;">fun</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-11-29-thanksgiving_gantt/index.html" class="no-external">
-Thanksgiving is one of my favorite holidays. After reading the impassioned arguments of Brunch is Hell: How to save the world by throwing a dinner party, For about the past…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-11-29-thanksgiving_gantt/index.html" class="no-external">
-<div class="listing-date">
-Nov 29, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="ZGF0YSUyMHNjaWVuY2UlMkN0aWR5dHVlc2RheSUyQ3JzdGF0cw==" data-listing-date-sort="1763798400000" data-listing-file-modified-sort="1766190388203" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1286">
-<div class="thumbnail"><a href="./posts/2025-11-22-tidytuesday/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2025-11-22-tidytuesday/index_files/figure-html/unnamed-chunk-4-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-11-22-tidytuesday/index.html" class="no-external">TidyTuesday 2025-11-18 - Sherlock Holmes</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHNjaWVuY2U='); return false;">data science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dGlkeXR1ZXNkYXk='); return false;">tidytuesday</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cnN0YXRz'); return false;">rstats</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-11-22-tidytuesday/index.html" class="no-external">
-TidyTuesday is a weekly data visualization challenge. The details for this week can be found here.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-11-22-tidytuesday/index.html" class="no-external">
-<div class="listing-date">
-Nov 22, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="ZGV2ZWxvcG1lbnQlMkNoYXJ2dmVzdA==" data-listing-date-sort="1763193600000" data-listing-file-modified-sort="1763860297644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1034">
-<div class="thumbnail"><a href="./posts/2025-11-15-from_the_furrows/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/2025-11-15-from_the_furrows/founder_picture.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-11-15-from_the_furrows/index.html" class="no-external">From the Furrows - building a grownup backend</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGV2ZWxvcG1lbnQ='); return false;">development</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGFydnZlc3Q='); return false;">harvvest</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-11-15-from_the_furrows/index.html" class="no-external">
-Over a year ago, I committed my first lines of code for our new app. At that point I had used R for advanced data analysis work and dabbled into building my first…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-11-15-from_the_furrows/index.html" class="no-external">
-<div class="listing-date">
-Nov 15, 2025
-</div>
-</a>
+<p>It looks like there are a lot of NA values for energy, but we can probably use nutrients as a another output measurement. Also our inputs are going to be factors not numbers. This will impact the types of analyses we can use.</p>
+<p>Let’s start with a basic visualization for the non-NA energy content plants.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>edible_plants <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(energy)) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> water, <span class="at">y =</span> energy)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(sunlight)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/basic_analysis-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<p>Couple notable things here:</p>
+<ol type="1">
+<li>It looks the ability to tolerate shade is correlated with a lower caloric content.</li>
+<li>A surprising outlier, broad beans, or fava beans, can grow in full shade, with low water, and have the highest caloric content.</li>
+</ol>
+<p>If we had more energy values, we could formalize our observations with a <a href="https://statsandr.com/blog/two-way-anova-in-r/">two-way ANOVA</a>.</p>
+<p>Instead, let’s look at the nutrients dependent variable. Because this is categorical as well, we’ll use an <a href="https://stats.oarc.ucla.edu/r/dae/ordinal-logistic-regression/">ordinal logistic regression</a>. It’s important to note that nutrients isn’t a replacement for the energy variable. It describes the nutrient needs for the plant to grow. So a reasonable hypothesis is that if you have plenty of sun and water, you can don’t need to rely on extra nutrients in the soil.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>edible_plants <span class="ot">&lt;-</span> edible_plants <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nutrients <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>edible_plants<span class="sc">$</span>nutrients <span class="ot">&lt;-</span> <span class="fu">factor</span>(edible_plants<span class="sc">$</span>nutrients, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span>MASS<span class="sc">::</span><span class="fu">polr</span>(nutrients <span class="sc">~</span> sunlight <span class="sc">+</span> water, <span class="at">data =</span> edible_plants, <span class="at">Hess =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+MASS::polr(formula = nutrients ~ sunlight + water, data = edible_plants, 
+    Hess = TRUE)
+
+Coefficients:
+                                             Value Std. Error t value
+sunlightfull sun/partial shade             -0.8533     0.3881  -2.199
+sunlightfull sun/partial shade/full shade -28.1526     1.4209 -19.813
+sunlightpartial shade                      -0.8243     0.8149  -1.012
+waterLow                                  -31.1595     0.7538 -41.336
+waterMedium                               -28.1510     0.4607 -61.104
+waterHigh                                 -26.7838     0.5692 -47.058
+waterVery High                            -28.1526     1.4209 -19.813
+
+Intercepts:
+            Value    Std. Error t value 
+Low|Medium  -29.3183   0.4370   -67.0915
+Medium|High -26.9870   0.4527   -59.6119
+
+Residual Deviance: 238.4313 
+AIC: 256.4313 
+(2 observations deleted due to missingness)</code></pre>
+</div>
+</div>
+<p>The reference values here are “Full Sun” and “Very Low [water]”. What we see here is the opposite. The ability to tolerate full shade suggests a lower nutrient requirement. Similarly any amount of water beyond “Very Low” suggests a lower nutrient requirement. Maybe the better way to think about it is that sunlight or derivative sugar molecules are used with the nutrients in biochemical reactions.</p>
+<p>We can represent this visually here:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>edible_plants <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nutrients <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(water)) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> nutrients)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(sunlight), <span class="at">cols =</span> <span class="fu">vars</span>(water)) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/nutrient_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

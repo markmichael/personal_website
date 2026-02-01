@@ -1,0 +1,100 @@
+---
+title: "TidyTuesday 2026-02-03 Edible Plants"
+date: "2026-02-03"
+categories: ["data science", "tidytuesday", "rstats"]
+---
+
+
+TidyTuesday is a weekly data visualization challenge. The details for this week can be found [here](https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-02-03).
+
+### Introduction
+
+This week we're looking at edible plants. I'm interested in understanding the relationship between sun and water requirements and the caloric content of the plant. Generally I would expect that if a plant needs more energy from the sun, it's because it is storing more sugars in it's fruit. 
+
+
+```{r setup1, output=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+I use the tidytuesdayR package to load the data the first time. Then I store it locally in a csv.
+
+```{r setup2, eval=FALSE}
+edible_plants <- tidytuesdayR::tt_load("2026-02-03")[[1]]
+write_csv(edible_plants, "edible_plants.csv")
+
+```
+
+```{r setup3}
+
+edible_plants <- read_csv("edible_plants.csv", show_col_types = FALSE) |>
+  mutate(sunlight = tolower(sunlight) |> str_replace_all("/ ", "/") |> factor())
+
+edible_plants$water <- factor(edible_plants$water, levels= c("Very Low", "Low", "Medium", "High", "Very High"))
+
+```
+
+
+### Exploring columns of interest
+
+Let's look at the values in the sunlight, water, and energy columns.
+
+```{r column_explortion}
+
+edible_plants |>
+  select(sunlight, water, energy, nutrients) |>
+  glimpse()
+
+```
+
+It looks like there are a lot of NA values for energy, but we can probably use nutrients as a another output measurement. Also our inputs are going to be factors not numbers. This will impact the types of analyses we can use.
+
+Let's start with a basic visualization for the non-NA energy content plants.
+
+```{r basic_analysis}
+
+edible_plants |>
+  filter(!is.na(energy)) |>
+  ggplot(aes(x = water, y = energy)) +
+  facet_grid(rows = vars(sunlight)) +
+  geom_boxplot() +
+  theme_light()
+
+
+
+```
+
+Couple notable things here:
+
+1. It looks the ability to tolerate shade is correlated with a lower caloric content.
+2. A surprising outlier, broad beans, or fava beans, can grow in full shade, with low water, and have the highest caloric content.
+
+If we had more energy values, we could formalize our observations with a [two-way ANOVA](https://statsandr.com/blog/two-way-anova-in-r/).
+
+
+Instead, let's look at the nutrients dependent variable. Because this is categorical as well, we'll use an [ordinal logistic regression](https://stats.oarc.ucla.edu/r/dae/ordinal-logistic-regression/). It's important to note that nutrients isn't a replacement for the energy variable. It describes the nutrient needs for the plant to grow. So a reasonable hypothesis is that if you have plenty of sun and water, you can don't need to rely on extra nutrients in the soil.
+
+
+
+```{r nutrient_analysis}
+edible_plants <- edible_plants |>
+  filter(nutrients %in% c("Low", "Medium", "High"))
+edible_plants$nutrients <- factor(edible_plants$nutrients, levels = c("Low", "Medium", "High"))
+m <-MASS::polr(nutrients ~ sunlight + water, data = edible_plants, Hess = TRUE)
+summary(m)
+```
+
+The reference values here are "Full Sun" and "Very Low [water]". What we see here is the opposite. The ability to tolerate full shade suggests a lower nutrient requirement. Similarly any amount of water beyond "Very Low" suggests a lower nutrient requirement. Maybe the better way to think about it is that sunlight or derivative sugar molecules are used with the nutrients in biochemical reactions.
+
+We can represent this visually here:
+```{r nutrient_plot}
+edible_plants |>
+  filter(nutrients %in% c("Low", "Medium", "High")) |>
+  filter(!is.na(water)) |>
+  ggplot(aes(x = nutrients)) +
+  facet_grid(rows = vars(sunlight), cols = vars(water)) +
+  geom_bar() +
+  theme_light() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
