@@ -1,0 +1,69 @@
+---
+title: "TidyTuesday 2026-02-10 Winter Olympics Schedule"
+date: "2026-02-17"
+categories: ["data science", "tidytuesday", "rstats", "olympics"]
+---
+
+TidyTuesday is a weekly data visualization challenge. This week, we are exploring the 2026 Winter Olympics schedule to find patterns in event types, times, and medal events, particularly testing the hypothesis that medal events are more likely to occur in the evenings. The details for this week can be found [here](https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-02-10)
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
+```
+
+### Loading the data
+
+I use the tidytuesdayR package to load the data the first time. Then I store it locally in a csv.
+
+```{r setup2, eval=FALSE}
+
+olympics_data <- tidytuesdayR::tt_load("2026-02-10")[[1]]
+write_csv(olympics_data, "olympics_data.csv")
+
+```
+
+```{r setup3}
+
+olympics_data <- read_csv("olympics_data.csv", show_col_types = FALSE)
+
+```
+
+First I'm going to compare non-medal final events (e.g. quarter-finals) with medal final events. The dataset already has field `is_medal_event`. I'm going to calculate whether an event is a final by searching for the string `FNL` in the event code.
+
+```{r event_code_clean}
+
+olympics_data <- olympics_data |>
+  mutate(is_final = grepl("FNL", event_code))
+
+```
+
+### Visualizing start times
+
+We can get a quick glimpse of how these event stages are organized using a histogram with start times. I grouped these by disciplines so we can do a more fair comparison. I've also standardized the date so that we are only looking at differences in time of day rather than absolute time.
+
+```{r start_time}
+#| fig-height: 9
+#| fig-width: 6 
+
+olympics_data <- olympics_data |> 
+  mutate(start_time_hours = start_datetime_local |>
+         as_datetime(tz = "Europe/Rome") |>
+         floor_date(unit = "hours"))
+  date(olympics_data$start_time_hours) <- "1970-01-01"
+olympics_data |>
+  filter(is_final) |>
+  ggplot(aes(x = start_time_hours, fill = is_medal_event)) +
+  geom_density(alpha = 0.5) +
+  facet_grid(rows = vars(discipline_name), scales = "free_y") +
+  scale_x_time() +
+  theme(axis.text.y = element_blank(),
+  axis.ticks.y = element_blank(),
+  strip.text.y = element_text(angle = 0),
+  legend.position = "bottom")
+```
+
+
+### Conclusion
+
+Obviously, the quarter-finals are a prerequisite to the medaling event so it's reasonable to assume that medaling rounds will come later. I did find it interesting that it was also later in the day, likely related to medaling rounds being more popular than non-medaling rounds.

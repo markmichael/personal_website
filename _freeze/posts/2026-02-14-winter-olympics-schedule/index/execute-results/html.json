@@ -1,0 +1,17 @@
+{
+  "hash": "6fea7e8384ace6f87341bc2cb5ab0db1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"TidyTuesday 2026-02-10 Winter Olympics Schedule\"\ndate: \"2026-02-17\"\ncategories: [\"data science\", \"tidytuesday\", \"rstats\", \"olympics\"]\n---\n\nTidyTuesday is a weekly data visualization challenge. This week, we are exploring the 2026 Winter Olympics schedule to find patterns in event types, times, and medal events, particularly testing the hypothesis that medal events are more likely to occur in the evenings. The details for this week can be found [here](https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-02-10)\n\n\n\n\n### Loading the data\n\nI use the tidytuesdayR package to load the data the first time. Then I store it locally in a csv.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nolympics_data <- tidytuesdayR::tt_load(\"2026-02-10\")[[1]]\nwrite_csv(olympics_data, \"olympics_data.csv\")\n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nolympics_data <- read_csv(\"olympics_data.csv\", show_col_types = FALSE)\n```\n:::\n\n\nFirst I'm going to compare non-medal final events (e.g. quarter-finals) with medal final events. The dataset already has field `is_medal_event`. I'm going to calculate whether an event is a final by searching for the string `FNL` in the event code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nolympics_data <- olympics_data |>\n  mutate(is_final = grepl(\"FNL\", event_code))\n```\n:::\n\n\n### Visualizing start times\n\nWe can get a quick glimpse of how these event stages are organized using a histogram with start times. I grouped these by disciplines so we can do a more fair comparison. I've also standardized the date so that we are only looking at differences in time of day rather than absolute time.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nolympics_data <- olympics_data |> \n  mutate(start_time_hours = start_datetime_local |>\n         as_datetime(tz = \"Europe/Rome\") |>\n         floor_date(unit = \"hours\"))\n  date(olympics_data$start_time_hours) <- \"1970-01-01\"\nolympics_data |>\n  filter(is_final) |>\n  ggplot(aes(x = start_time_hours, fill = is_medal_event)) +\n  geom_density(alpha = 0.5) +\n  facet_grid(rows = vars(discipline_name), scales = \"free_y\") +\n  scale_x_time() +\n  theme(axis.text.y = element_blank(),\n  axis.ticks.y = element_blank(),\n  strip.text.y = element_text(angle = 0),\n  legend.position = \"bottom\")\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/start_time-1.png){width=576}\n:::\n:::\n\n\n\n### Conclusion\n\nObviously, the quarter-finals are a prerequisite to the medaling event so it's reasonable to assume that medaling rounds will come later. I did find it interesting that it was also later in the day, likely related to medaling rounds being more popular than non-medaling rounds.\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
