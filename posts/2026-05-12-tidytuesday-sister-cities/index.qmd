@@ -1,0 +1,192 @@
+---
+title: "TidyTuesday: Sister Cities"
+date: "2026-05-12"
+format:
+  html:
+    resources:
+      - cities.csv
+      - links.csv
+filters:
+  - shinylive
+categories: ["data science", "rstats", "tidytuesday"]
+---
+
+## Introduction
+
+This week's TidyTuesday explores the connections between sister cities across the globe. Unlike previous posts, this one is going to use shiny to create an interactive app.
+
+In particular, I'm interested in identifying chains of sister cities that connect two countries.
+
+### Setup
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(shiny)
+```
+
+### Loading the Data
+
+```{r load-data, message=FALSE}
+# tuesdata <- tidytuesdayR::tt_load('2026-05-12')
+# cities   <- tuesdata$cities |>
+#   write_csv("cities.csv")
+# links    <- tuesdata$links |>
+#   write_csv("links.csv")
+
+cities <- read_csv("cities.csv")
+links  <- read_csv("links.csv")
+
+```
+
+### Chain finding algorithm 
+
+To find the connection between two cities, we can treat the sister city relationships as an undirected graph. The following function uses the `igraph` package to find the shortest path between any two city codes.
+
+```{r find-chain}
+library(igraph)
+
+links_graph <- graph_from_data_frame(links, directed = FALSE)
+
+find_city_chain <- function(city_a, city_b, links_graph) {
+  # Create an undirected graph from the links
+  # The source and target are interchangeable
+  
+  # Check if cities exist in the network
+  if (!(city_a %in% V(links_graph)$name) || !(city_b %in% V(links_graph)$name)) {
+    return(NULL)
+  }
+  
+  # Find the shortest path
+  path_res <- shortest_paths(links_graph, from = city_a, to = city_b)
+  path <- path_res$vpath[[1]]
+  
+  if (length(path) == 0) {
+    return(NULL)
+  }
+  
+  # Return the sequence of city codes
+  return(names(path))
+}
+```
+
+### Interactive Explorer
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 700
+
+library(shiny)
+library(leaflet)
+library(igraph)
+library(readr)
+library(dplyr)
+
+# Load data - in Shinylive, files must be in the same directory or listed in resources
+cities <- read_csv("cities.csv")
+links <- read_csv("links.csv")
+
+# Create undirected graph for pathfinding
+links_graph <- graph_from_data_frame(links, directed = FALSE)
+
+# Prepare city choices for the dropdowns
+city_choices <- cities$id
+names(city_choices) <- paste0(cities$name, " (", cities$countrycd, ")")
+
+ui <- fluidPage(
+  theme = bslib::bs_theme(bootswatch = "flatly"),
+  titlePanel("Sister City Chain Finder"),
+  sidebarLayout(
+    sidebarPanel(
+      p("Find the connection between two cities through the global sister-city network."),
+      selectizeInput("city_a", "Starting City", choices = NULL, options = list(placeholder = 'Search for a city...')),
+      selectizeInput("city_b", "Destination City", choices = NULL, options = list(placeholder = 'Search for a city...')),
+      hr(),
+      uiOutput("path_info")
+    ),
+    mainPanel(
+      leafletOutput("map", height = "600px")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  # Server-side selectize handles the large list of cities efficiently
+  updateSelectizeInput(session, "city_a", choices = city_choices, server = TRUE)
+  updateSelectizeInput(session, "city_b", choices = city_choices, server = TRUE)
+  
+  # Reactive to find the shortest path using igraph
+  path_ids <- reactive({
+    req(input$city_a, input$city_b)
+    if (input$city_a == input$city_b) return(input$city_a)
+    
+    # Verify nodes exist in the graph
+    if (!(input$city_a %in% V(links_graph)$name) || !(input$city_b %in% V(links_graph)$name)) {
+      return(NULL)
+    }
+    
+    # Find shortest path
+    res <- shortest_paths(links_graph, from = input$city_a, to = input$city_b)
+    ids <- names(res$vpath[[1]])
+    
+    if (length(ids) == 0) return(NULL)
+    ids
+  })
+  
+  # Display the text-based list of cities in the chain
+  output$path_info <- renderUI({
+    ids <- path_ids()
+    if (is.null(ids)) {
+      return(helpText("No connection found between these cities."))
+    }
+    
+    path_names <- cities$name[match(ids, cities$id)]
+    tagList(
+      h4(paste("Chain Length:", length(ids))),
+      tags$ol(
+        lapply(path_names, tags$li)
+      )
+    )
+  })
+  
+  # Render the leaflet map
+  output$map <- renderLeaflet({
+    ids <- path_ids()
+    
+    m <- leaflet() %>%
+      addProviderTiles(providers$CartoDB.Positron)
+    
+    if (!is.null(ids)) {
+      # Extract coordinates and info in the exact path order
+      path_df <- cities[match(ids, cities$id), ]
+      
+      m <- m %>%
+        addMarkers(
+          data = path_df, 
+          lng = ~lng, lat = ~lat,
+          label = ~paste0(name, ", ", country),
+          popup = ~paste0("<b>", name, "</b><br>", country)
+        ) %>%
+        addPolylines(
+          lng = path_df$lng, 
+          lat = path_df$lat, 
+          color = "#e74c3c", 
+          weight = 3, 
+          opacity = 0.8
+        )
+      
+      # Adjust viewport to show the entire path
+      if (nrow(path_df) > 1) {
+        m <- m %>% fitBounds(
+          lng1 = min(path_df$lng), lat1 = min(path_df$lat),
+          lng2 = max(path_df$lng), lat2 = max(path_df$lat)
+        )
+      } else {
+        m <- m %>% setView(lng = path_df$lng[1], lat = path_df$lat[1], zoom = 6)
+      }
+    }
+    m
+  })
+}
+
+shinyApp(ui, server)
+```
