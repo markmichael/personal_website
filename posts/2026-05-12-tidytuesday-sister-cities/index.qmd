@@ -6,8 +6,6 @@ format:
     resources:
       - cities.csv
       - links.csv
-filters:
-  - shinylive
 categories: ["data science", "rstats", "tidytuesday"]
 ---
 
@@ -38,155 +36,85 @@ links  <- read_csv("links.csv")
 
 ```
 
-### Chain finding algorithm 
+### Distance chain finding algorithm 
 
-To find the connection between two cities, we can treat the sister city relationships as an undirected graph. The following function uses the `igraph` package to find the shortest path between any two city codes.
+To find the connection between two cities, we can treat the sister city relationships as an undirected graph. The following function uses the `igraph` package to find the the number of links in the shortest path between any two city codes. I'm also creating a tall version of this for different kinds of visualizations.
 
 ```{r find-chain}
-library(igraph)
+library(igraph, warn.conflicts = FALSE)
 
 links_graph <- graph_from_data_frame(links, directed = FALSE)
+distances <- distances(links_graph)
 
-find_city_chain <- function(city_a, city_b, links_graph) {
-  # Create an undirected graph from the links
-  # The source and target are interchangeable
-  
-  # Check if cities exist in the network
-  if (!(city_a %in% V(links_graph)$name) || !(city_b %in% V(links_graph)$name)) {
-    return(NULL)
-  }
-  
-  # Find the shortest path
-  path_res <- shortest_paths(links_graph, from = city_a, to = city_b)
-  path <- path_res$vpath[[1]]
-  
-  if (length(path) == 0) {
-    return(NULL)
-  }
-  
-  # Return the sequence of city codes
-  return(names(path))
-}
+distances <- as_tibble(distances)
+
+distances_tall <- distances |>
+  pivot_longer(everything(), names_to = "to", values_to = "distance") |>
+  mutate(from = rep(names(distances), ncol(distances)))
+
 ```
 
-### Interactive Explorer
+```{r most-connected-cities}
 
-```{shinylive-r}
-#| standalone: true
-#| viewerHeight: 700
+number_of_connections <- distances_tall |>
+  group_by(from) |>
+  summarise(total_connections = sum(distance > 0 & distance != Inf))
 
-library(shiny)
-library(leaflet)
-library(igraph)
-library(readr)
-library(dplyr)
-
-# Load data - in Shinylive, files must be in the same directory or listed in resources
-cities <- read_csv("cities.csv")
-links <- read_csv("links.csv")
-
-# Create undirected graph for pathfinding
-links_graph <- graph_from_data_frame(links, directed = FALSE)
-
-# Prepare city choices for the dropdowns
-city_choices <- cities$id
-names(city_choices) <- paste0(cities$name, " (", cities$countrycd, ")")
-
-ui <- fluidPage(
-  theme = bslib::bs_theme(bootswatch = "flatly"),
-  titlePanel("Sister City Chain Finder"),
-  sidebarLayout(
-    sidebarPanel(
-      p("Find the connection between two cities through the global sister-city network."),
-      selectizeInput("city_a", "Starting City", choices = NULL, options = list(placeholder = 'Search for a city...')),
-      selectizeInput("city_b", "Destination City", choices = NULL, options = list(placeholder = 'Search for a city...')),
-      hr(),
-      uiOutput("path_info")
-    ),
-    mainPanel(
-      leafletOutput("map", height = "600px")
-    )
-  )
-)
-
-server <- function(input, output, session) {
-  # Server-side selectize handles the large list of cities efficiently
-  updateSelectizeInput(session, "city_a", choices = city_choices, server = TRUE)
-  updateSelectizeInput(session, "city_b", choices = city_choices, server = TRUE)
-  
-  # Reactive to find the shortest path using igraph
-  path_ids <- reactive({
-    req(input$city_a, input$city_b)
-    if (input$city_a == input$city_b) return(input$city_a)
-    
-    # Verify nodes exist in the graph
-    if (!(input$city_a %in% V(links_graph)$name) || !(input$city_b %in% V(links_graph)$name)) {
-      return(NULL)
-    }
-    
-    # Find shortest path
-    res <- shortest_paths(links_graph, from = input$city_a, to = input$city_b)
-    ids <- names(res$vpath[[1]])
-    
-    if (length(ids) == 0) return(NULL)
-    ids
-  })
-  
-  # Display the text-based list of cities in the chain
-  output$path_info <- renderUI({
-    ids <- path_ids()
-    if (is.null(ids)) {
-      return(helpText("No connection found between these cities."))
-    }
-    
-    path_names <- cities$name[match(ids, cities$id)]
-    tagList(
-      h4(paste("Chain Length:", length(ids))),
-      tags$ol(
-        lapply(path_names, tags$li)
-      )
-    )
-  })
-  
-  # Render the leaflet map
-  output$map <- renderLeaflet({
-    ids <- path_ids()
-    
-    m <- leaflet() %>%
-      addProviderTiles(providers$CartoDB.Positron)
-    
-    if (!is.null(ids)) {
-      # Extract coordinates and info in the exact path order
-      path_df <- cities[match(ids, cities$id), ]
-      
-      m <- m %>%
-        addMarkers(
-          data = path_df, 
-          lng = ~lng, lat = ~lat,
-          label = ~paste0(name, ", ", country),
-          popup = ~paste0("<b>", name, "</b><br>", country)
-        ) %>%
-        addPolylines(
-          lng = path_df$lng, 
-          lat = path_df$lat, 
-          color = "#e74c3c", 
-          weight = 3, 
-          opacity = 0.8
-        )
-      
-      # Adjust viewport to show the entire path
-      if (nrow(path_df) > 1) {
-        m <- m %>% fitBounds(
-          lng1 = min(path_df$lng), lat1 = min(path_df$lat),
-          lng2 = max(path_df$lng), lat2 = max(path_df$lat)
-        )
-      } else {
-        m <- m %>% setView(lng = path_df$lng[1], lat = path_df$lat[1], zoom = 6)
-      }
-    }
-    m
-  })
-}
-
-shinyApp(ui, server)
+ggplot(number_of_connections |>
+  mutate(total_connections = as.factor(total_connections)), aes(x = total_connections)) +
+  geom_histogram(stat = "count") 
 ```
+
+It looks like there is one giant web of 4552 sister cities and a cluster of isolated smaller webs.
+
+```{r average-connections}
+
+ggplot(distances_tall, aes(x = distance)) +
+  geom_histogram()
+
+```
+
+Let's connect the city ids to the remaining data and see if we can identify some additional patterns
+
+```{r city-data}
+
+number_of_connections_detail <- number_of_connections |>
+  left_join(cities, by = c("from" = "id")) |>
+  mutate(is_isolated = total_connections != 4552)
+
+connections_formula_location <- is_isolated ~  lng + lat 
+number_of_connections_detail |>
+  glm(connections_formula_location, family = "binomial", data = _ ) |>
+  summary()
+```
+
+It looks like the further South you go, the more likely you are to be part of the giant network of cities. Taking this a step further, let's plot all the latitudes and longitudes and categorize them by the number of connections.
+
+```{r city-map}
+
+ggplot(data = number_of_connections_detail |> mutate(total_connections = as.factor(total_connections)), aes(x = lng, y = lat, color = total_connections)) +
+  geom_point() +
+  theme(legend.position = "bottom") +
+  scale_color_brewer(palette = "Set1")
+
+```
+
+Instead of just highlighting the isolated cities, let's actually connect them.
+
+```{r city-connections}
+
+links_detail <- links |>
+  left_join(cities |> select(id, lng, lat), by = c("source" = "id")) |>
+  rename(from_lng = lng, from_lat = lat) |>
+  left_join(cities |> select(id, lng, lat), by = c("target" = "id")) |>
+  rename(to_lng = lng, to_lat = lat) |>
+  left_join(number_of_connections_detail |> select(from, is_isolated, total_connections),  by= c("source" = "from"))
+
+ggplot(data = links_detail) +
+  geom_point(aes(x = from_lng, y = from_lat), color = "grey", alpha = 0.2) +
+  geom_segment(data = links_detail |> filter(total_connections <=3), mapping = aes(x = from_lng, y = from_lat, xend = to_lng, yend = to_lat, color = as.factor(total_connections))) +
+  theme(legend.position = "bottom")
+
+```
+
+It looks like a mess at the top, but clearly being in the south means you are way less likely to have a small network of sister cities.
