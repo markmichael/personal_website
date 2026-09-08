@@ -220,7 +220,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </section>
 <section id="loading-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-data">Loading the Data</h2>
-<p>Let’s start by loading the necessary libraries and the dataset.</p>
+<p>Let’s start by loading the necessary libraries and the dataset. I’m making one modification to our data by filtering out the ruins. The spirit of our prediction is that our input variables give us information about circumstances around their creation. No one creates a ruin; it’s the destruction of one of the other site types. Therefore, the year in partcular, cannot be a useful predictor.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
@@ -233,9 +233,10 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(sites, "sites.csv", row.names = FALSE)</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"sites.csv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(qid, name, category, year, lat, lon)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sites)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(qid, name, category, year, lat, lon) <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(category <span class="sc">!=</span> <span class="st">"ruin"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sites)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       qid                  name category year      lat       lon
 1   Q12501   Great Wall of China fortress -700 40.43139 116.56444
@@ -268,7 +269,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </div>
 </div>
 <p>It looks like there is some geographical concentration of various site types.</p>
-<p>And let’s look at the distribution of the construction year by site type.</p>
+<p>Now let’s look at the distribution of the construction year by site type.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sites, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
@@ -302,7 +303,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </section>
 <section id="creating-the-recipe-and-model-specification" class="level3">
 <h3 class="anchored" data-anchor-id="creating-the-recipe-and-model-specification">Creating the Recipe and Model Specification</h3>
-<p>Our recipe is simple: we’ll predict <code>category</code> using all other variables. We’ll use a random forest model.</p>
+<p>A random forest model is commonly used for classification with more than two classes. In this case we have four.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>site_rec <span class="ot">&lt;-</span> <span class="fu">recipe</span>(category <span class="sc">~</span> year <span class="sc">+</span> lat <span class="sc">+</span> lon, <span class="at">data =</span> site_train)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -344,9 +345,9 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <pre><code># A tibble: 3 × 4
   .metric     .estimator .estimate .config        
   &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;          
-1 accuracy    multiclass     0.617 pre0_mod0_post0
-2 roc_auc     hand_till      0.826 pre0_mod0_post0
-3 brier_class multiclass     0.261 pre0_mod0_post0</code></pre>
+1 accuracy    multiclass     0.746 pre0_mod0_post0
+2 roc_auc     hand_till      0.870 pre0_mod0_post0
+3 brier_class multiclass     0.177 pre0_mod0_post0</code></pre>
 </div>
 </div>
 <p>Let’s visualize the confusion matrix to see where our model succeeds and where it gets confused.</p>
@@ -357,7 +358,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -366,8 +367,7 @@ gtag('config', 'G-XV04WJ9C9C', { 'anonymize_ip': true});
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>In this post, we demonstrated how to use the <code>tidymodels</code> framework to classify historical sites based on their location and age. While our model might benefit from additional historical features, it shows how easily geographic and temporal data can be modeled in R.</p>
-<p>Happy Tidy Tuesday!</p>
+<p>In this post, we demonstrated how to use the <code>tidymodels</code> framework to classify historical sites based on their location and age.</p>
 
 
 </section>
