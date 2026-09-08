@@ -1,0 +1,146 @@
+---
+title: "Tidy Tuesday: Predicting Castles, Fortresses, and Palaces"
+description: "Using tidymodels to classify historical sites based on their age and location."
+author: "Mark"
+date: "2026-09-01"
+categories: [R, TidyTuesday, tidymodels, machine-learning]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Introduction
+
+This week's [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) dataset features world castles, fortresses, palaces, and ruins. These historical structures span centuries and continents. In this post, we'll build a predictive model to classify the type of site using its latitude and longitude and the year it was constructed or first documented. Both geography and year help us pinpoint the specific civilization as well as whether we are at nearer the rise or collapse of that civilization and therefore, whether it is likely to be a ruin.
+
+We will use the `tidymodels` framework in R to build a random forest classifier.
+
+## Loading the Data
+
+Let's start by loading the necessary libraries and the dataset. I'm making one modification to our data by filtering out the ruins. The spirit of our prediction is that our input variables give us information about circumstances around their creation. No one creates a ruin; it's the destruction of one of the other site types. Therefore, the year in partcular, cannot be a useful predictor.
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+
+theme_set(theme_light())
+
+# Load the data
+# tuesdata <- tidytuesdayR::tt_load('2026-09-01')
+# sites <- tuesdata$world_castles
+# write.csv(sites, "sites.csv", row.names = FALSE)
+
+sites <- read.csv("sites.csv") |>
+  select(qid, name, category, year, lat, lon) |>
+filter(category != "ruin")
+
+head(sites)
+
+```
+
+## Exploratory Data Analysis
+
+Before building the model, let's visualize the distribution of our historical sites.
+
+```{r}
+ggplot(sites, aes(x = lon, y = lat, color = category)) +
+  geom_point(alpha = 0.6) +
+  labs(title = "Geographic Distribution of Historical Sites",
+       x = "Longitude",
+       y = "Latitude",
+       color = "Site Type") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+It looks like there is some geographical concentration of various site types. Now let's look at the distribution of the construction year by site type.
+
+```{r}
+ggplot(sites, aes(x = year)) +
+  geom_density(alpha = 1) +
+  labs(title = "Age Distribution of Historical Sites",
+       x = "Year",
+       y = "Density") +
+  facet_grid(rows = vars(category)) + 
+  theme(axis.text.y = element_blank())
+
+```
+
+It looks like castles tend to be older than fortresses and palaces.
+
+
+## Building the Model with tidymodels
+
+We'll predict `category` using `year`, `lat`, and `lon`.
+
+### Data Splitting and Resampling
+
+```{r}
+set.seed(42)
+site_split <- initial_split(sites, strata = category)
+site_train <- training(site_split)
+site_test <- testing(site_split)
+site_folds <- vfold_cv(site_train, strata = category)
+```
+
+
+### Creating the Recipe and Model Specification
+
+A random forest model is commonly used for classification with more than two classes. In this case we have four.
+
+```{r}
+site_rec <- recipe(category ~ year + lat + lon, data = site_train)
+
+rf_spec <- rand_forest(trees = 500, min_n = tune(), mtry = tune()) |>
+  set_engine("ranger", importance = "impurity") |>
+  set_mode("classification")
+
+site_wf <- workflow() |>
+  add_recipe(site_rec) |>
+  add_model(rf_spec)
+```
+
+### Tuning the Model
+
+Let's tune the hyperparameters of our random forest.
+
+```{r}
+#| eval: true
+rf_res <- tune_grid(
+  site_wf,
+  resamples = site_folds,
+  grid = 10,
+  control = control_grid(save_pred = TRUE)
+)
+
+# Select the best model based on accuracy
+best_rf <- select_best(rf_res, metric = "accuracy")
+
+# Finalize the workflow
+final_wf <- finalize_workflow(site_wf, best_rf)
+```
+
+
+### Final Evaluation
+
+Now, let's fit our final model to the training data and evaluate it on the testing set.
+
+```{r}
+final_fit <- last_fit(final_wf, site_split)
+
+collect_metrics(final_fit)
+```
+
+Let's visualize the confusion matrix to see where our model succeeds and where it gets confused.
+
+```{r}
+collect_predictions(final_fit) |>
+  conf_mat(category, .pred_class) |>
+  autoplot(type = "heatmap")
+```
+
+
+## Conclusion
+
+In this post, we demonstrated how to use the `tidymodels` framework to classify historical sites based on their location and age. I think it's important to highlight the decision to filter out the ruins. Ruins are interesting in that they are created after the original construction. Perhaps if we knew the year it became a ruin, rather than the year it was completed, we may be able to use it in our model. By mapping the position and time to something like the Arab conquest we could predict something as more likely be destroyed rather than created. At the same time, the Arab conquest is also characterized by building, from mosques to fortifications to entire cities. Outside of this post, I recalculated the metrics of the model had I not removed the ruins category. Indeed, the accuracy was about 10 percent less than had I included it. Overall, coupling both the easy to use tidymodels package and some sensible choices of model and data preprocessing, we were able to build a model that predicts a type of historical site based on location and construction year. That's pretty cool.
